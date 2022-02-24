@@ -19,6 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Minnnning's Blog
+tagline: Swift and Python
 email: 6alswjd6@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Swift and Python
