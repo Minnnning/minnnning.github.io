@@ -12,6 +12,8 @@ tags: git blog
 
 
 
+
+
 ### 1. 깃허브 레파지토리 만들기
 
 깃허브 홈페이지에 들어가서 새로운 레파지토리를 만든다
@@ -27,6 +29,8 @@ tags: git blog
 위에 사진에는 이미 같은 이름이 있어서 생성이 안된다고 뜨는것
 
 레포이름은 나중에 접속할 주소가 된다
+
+
 
 
 
@@ -52,6 +56,8 @@ tags: git blog
 <center><img width="994" alt="스크린샷 2022-02-25 오후 4 48 38" src="https://user-images.githubusercontent.com/80758613/155681338-0b1940cf-012d-48d0-9f30-89cb128f80ac.png" style="zoom:60%;"></center>
 
 그럼 해당 위치에 클론한 폴더가 만들어져 있다
+
+
 
 
 
@@ -87,6 +93,8 @@ http://127.0.01:4000/ 을 주소창에 치면 내가 만든 블로그를 로컬�
 
 
 
+
+
 ### 4. URL 변경하기
 
 내가 만든 페이지의 주소를 변경하려면 먼저 클론한 파일안에 있는 _config.yml 파일을 연다(텍스트 편집기)
@@ -98,6 +106,8 @@ http://127.0.01:4000/ 을 주소창에 치면 내가 만든 블로그를 로컬�
 <center><img alt="스크린샷 2022-02-25 오후 6 01 54" src="https://user-images.githubusercontent.com/80758613/155686451-77e9d9c4-8d8a-44c4-ba0a-94fbab56cf22.png" style="zoom:50%;"></center>
 
 ###### 예시는 테마를 적용해서 내용이 다를 수 있지만 url만 찾아서 바꾸면 된다
+
+
 
 
 
@@ -119,4 +129,4 @@ http://127.0.01:4000/ 을 주소창에 치면 내가 만든 블로그를 로컬�
 <img alt="스크린샷 2022-02-25 오후 6 14 20" src="https://user-images.githubusercontent.com/80758613/155688389-aaedbbf7-7e90-4a8f-af9a-a93d3d03a0a6.png" style="zoom:50%;">
 </center>
 
-이렇게 뜨면 성공!
+<center>**이렇게 뜨면 성공!**</center>
