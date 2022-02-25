@@ -4,8 +4,6 @@ title: "github 블로그 만들기(1)"
 date:   2022-02-25 16:06:47 +0900
 categories: github
 tags: git blog
-typora-copy-images-to: ../images
-typora-root-url: ../
 ---
 
 원래 네이버 블로그에서 공부한것을 정리했지만 네이버 블로그의 스마트에디터가 블루투스 키보드나 사파리와 맞지 않아서 다른 플랫폼을 찾아보다 github.io 블로그를 찾게 되었다 git블로그를 사용할려면 기본적인 git 사용법과 터미널의 사용법 또 블로그를 꾸미기위해 html과 css등이 필요할 수 있지만 이번에는 그냥 맘에 드는 테마를 사용하기로 했다 테마를 적용한다고 끝이 아니라 글쓰기 테마 사용법등을 기록하기 위해 글을 작성해본다
@@ -18,11 +16,11 @@ typora-root-url: ../
 
 깃허브 홈페이지에 들어가서 새로운 레파지토리를 만든다
 
-![스크린샷 2022-02-25 오후 4.31.29](/images/스크린샷 2022-02-25 오후 4.31.29.png)
+<center><img alt="스크린샷 2022-02-25 오후 4 31 29" src="https://user-images.githubusercontent.com/80758613/155680099-eeae1b73-cdfe-4c83-b2fc-7b51b9775ec7.png" style="zoom:33%;"></center>
 
 레파지토리 버튼을 누르면 위 화면이 나오는데 오른쪽에 초록색 new버튼을 눌러 새로운 레파지토리를 만든다
 
-<img src="/images/스크린샷 2022-02-25 오후 4.33.41.png" alt="스크린샷 2022-02-25 오후 4.33.41" style="zoom:33%;" />
+<img alt="스크린샷 2022-02-25 오후 4 33 41" src="https://user-images.githubusercontent.com/80758613/155680842-e956d4dc-7d89-459a-8a23-8564fbef84e7.png" style="zoom:33%;">
 
 레포 이름을 {사용자이름}.github.io 로 만들어준다
 
@@ -36,7 +34,7 @@ typora-root-url: ../
 
 터미널을 키고 클론할 위치까지 현재위치를 이동시킨다
 
-<img src="/images/스크린샷 2022-02-25 오후 4.41.34.png" alt="스크린샷 2022-02-25 오후 4.41.34" style="zoom:33%;" />
+<img alt="스크린샷 2022-02-25 오후 4 41 34" src="https://user-images.githubusercontent.com/80758613/155680984-d0410306-667a-471f-9bea-1ece0de7da5b.png" style="zoom:33%;">
 
 | pwd       | 현재위치 표시             |
 | --------- | ------------------------- |
@@ -50,7 +48,7 @@ typora-root-url: ../
 
 초록색 code 버튼을 누르면 주소가 나온다
 
-<img src="/images/스크린샷 2022-02-25 오후 4.48.38.png" alt="스크린샷 2022-02-25 오후 4.48.38" style="zoom:33%;" />
+<img width="994" alt="스크린샷 2022-02-25 오후 4 48 38" src="https://user-images.githubusercontent.com/80758613/155681338-0b1940cf-012d-48d0-9f30-89cb128f80ac.png" style="zoom:60%;">
 
 그럼 해당 위치에 클론한 폴더가 만들어져 있다
 
