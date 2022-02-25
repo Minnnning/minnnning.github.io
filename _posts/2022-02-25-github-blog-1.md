@@ -20,7 +20,7 @@ tags: git blog
 
 레파지토리 버튼을 누르면 위 화면이 나오는데 오른쪽에 초록색 new버튼을 눌러 새로운 레파지토리를 만든다
 
-<img alt="스크린샷 2022-02-25 오후 4 33 41" src="https://user-images.githubusercontent.com/80758613/155680842-e956d4dc-7d89-459a-8a23-8564fbef84e7.png" style="zoom:33%;">
+<center><img alt="스크린샷 2022-02-25 오후 4 33 41" src="https://user-images.githubusercontent.com/80758613/155680842-e956d4dc-7d89-459a-8a23-8564fbef84e7.png" style="zoom:33%;"></center>
 
 레포 이름을 {사용자이름}.github.io 로 만들어준다
 
@@ -34,13 +34,14 @@ tags: git blog
 
 터미널을 키고 클론할 위치까지 현재위치를 이동시킨다
 
-<img alt="스크린샷 2022-02-25 오후 4 41 34" src="https://user-images.githubusercontent.com/80758613/155680984-d0410306-667a-471f-9bea-1ece0de7da5b.png" style="zoom:33%;">
+<center><img alt="스크린샷 2022-02-25 오후 4 41 34" src="https://user-images.githubusercontent.com/80758613/155680984-d0410306-667a-471f-9bea-1ece0de7da5b.png" style="zoom:33%;"></center>
 
-| pwd       | 현재위치 표시             |
-| --------- | ------------------------- |
-| ls        | 현재 위치의 파일을 보여줌 |
-| cd 폴더명 | 해당 폴더로 진입          |
-| cd ..     | 이전으로 나온다           |
+| 간단한 터미널 명령어 |                           |
+| -------------------- | ------------------------- |
+| pwd                  | 현재위치 표시             |
+| cd 폴더명            | 해당 폴더로 진입          |
+| cd ..                | 이전으로 나온다           |
+| ls                   | 현재 위치의 파일을 보여줌 |
 
 원하는 위치로 이동하면 클론을 시작한다
 
@@ -48,7 +49,74 @@ tags: git blog
 
 초록색 code 버튼을 누르면 주소가 나온다
 
-<img width="994" alt="스크린샷 2022-02-25 오후 4 48 38" src="https://user-images.githubusercontent.com/80758613/155681338-0b1940cf-012d-48d0-9f30-89cb128f80ac.png" style="zoom:60%;">
+<center><img width="994" alt="스크린샷 2022-02-25 오후 4 48 38" src="https://user-images.githubusercontent.com/80758613/155681338-0b1940cf-012d-48d0-9f30-89cb128f80ac.png" style="zoom:60%;"></center>
 
 그럼 해당 위치에 클론한 폴더가 만들어져 있다
 
+
+
+### 3. jekyll을 시작하자
+
+터미널에서 현재 위치를 확인한 다음 클론한 폴더로 이동한다 클론한 폴더명은 github이름.github.io로 되어있다
+
+cd 폴더명을 통해서 해당 폴더로 접속후 
+
+`gem install jekyll bundler ` 을 입력해서 jekyll을 설치해준다
+
+###### 만약 설치과정에서 오류가 나온다면 https://unluckyjung.github.io/develop-setting/2021/01/20/Mac-Jekyll-Setting/
+
+클론한 폴더 안의 모든 파일을 지우고( readme.md파일을 지운다) 
+
+터미널에 `jekyll ./ new` 입력한다 
+
+###### 만약에 폴더를 비우지 않으면 
+
+###### Conflict: /Users/minnnning/Desktop/minnnning.github.io exists and is not empty. 충돌된다
+
+
+
+위 과정을 오류 없이 넘겼으면 `bundle install` 터미널에 입력
+
+`bundle exec jeklly serve` 터미널에 입력시키면 로컬 주소가 나온다
+
+<center>
+<img alt="스크린샷 2022-02-25 오후 5 51 48" src="https://user-images.githubusercontent.com/80758613/155685267-bab47e74-e41d-45db-aa12-43b64fd491f9.png" style="zoom:50%;">
+</center>
+
+http://127.0.01:4000/ 을 주소창에 치면 내가 만든 블로그를 로컬환경에서 볼 수 있다 (아직 서버에 올라가지 않음)
+
+
+
+### 4. URL 변경하기
+
+내가 만든 페이지의 주소를 변경하려면 먼저 클론한 파일안에 있는 _config.yml 파일을 연다(텍스트 편집기)
+
+파일안에서 url 부분을 찾아서 본인의 주소로 바꿔준다
+
+형식은 url: "http://본인것.github.io" 이렇게 바꿔 주고 저장한다
+
+<center><img alt="스크린샷 2022-02-25 오후 6 01 54" src="https://user-images.githubusercontent.com/80758613/155686451-77e9d9c4-8d8a-44c4-ba0a-94fbab56cf22.png" style="zoom:50%;"></center>
+
+###### 예시는 테마를 적용해서 내용이 다를 수 있지만 url만 찾아서 바꾸면 된다
+
+
+
+### 5. 깃허브에 올리기
+
+클론한 폴더를 깃허브에 커밋하고 올린다
+
+`git add *`
+
+`git commit -m"커밋 이름"`
+
+`git push -u origin main `
+
+3가지를 모두 터미널에 순서대로 작성하면 본인의 레포에 올라갔을 것이다
+
+이제 주소창에 http://본인것.github.io를 검색하면 만들어진 사이트가 뜬다
+
+<center>
+<img alt="스크린샷 2022-02-25 오후 6 14 20" src="https://user-images.githubusercontent.com/80758613/155688389-aaedbbf7-7e90-4a8f-af9a-a93d3d03a0a6.png" style="zoom:50%;">
+</center>
+
+이렇게 뜨면 성공!
