@@ -6,7 +6,9 @@ categories: github
 tags: git blog
 ---
 
-원래 네이버 블로그에서 공부한것을 정리했지만 네이버 블로그의 스마트에디터가 블루투스 키보드나 사파리와 맞지 않아서 다른 플랫폼을 찾아보다 github.io 블로그를 찾게 되었다 git블로그를 사용할려면 기본적인 git 사용법과 터미널의 사용법 또 블로그를 꾸미기위해 html과 css등이 필요할 수 있지만 이번에는 그냥 맘에 드는 테마를 사용하기로 했다 테마를 적용한다고 끝이 아니라 글쓰기 테마 사용법등을 기록하기 위해 글을 작성해본다
+원래 네이버 블로그에서 공부한것을 정리했지만 네이버 블로그의 스마트에디터가 블루투스 키보드나 사파리와 맞지 않아서 다른 플랫폼을 찾아보다 github.io 블로그를 찾게 되었다
+
+git블로그를 사용할려면 기본적인 git 사용법과 터미널의 사용법 또 블로그를 꾸미기위해 html과 css등이 필요할 수 있지만 이번에는 그냥 맘에 드는 테마를 사용하기로 했다 테마를 적용한다고 끝이 아니라 글쓰기 테마 사용법등을 기록하기 위해 글을 작성해본다
 
 먼저 처음하는거라 다른 [블로그](https://zeddios.tistory.com/1222){:target="_blank"} 글을 참고했다 
 
@@ -69,7 +71,7 @@ cd 폴더명을 통해서 해당 폴더로 접속후
 
 `gem install jekyll bundler ` 을 입력해서 jekyll을 설치해준다
 
-###### 만약 설치과정에서 오류가 나온다면 https://unluckyjung.github.io/develop-setting/2021/01/20/Mac-Jekyll-Setting/
+###### 만약 설치과정에서 오류가 나온다면 [참조](https://unluckyjung.github.io/develop-setting/2021/01/20/Mac-Jekyll-Setting/)
 
 클론한 폴더 안의 모든 파일을 지우고( readme.md파일을 지운다) 
 
