@@ -21,12 +21,12 @@
 title: Minnnning's Blog
 
 tagline: Swift and Python
-
-email: 6alswjd6@gmail.com
+about: papap
 description: >- # this means to ignore newlines until "baseurl:"
   Swift and Python
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://minnnning.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+email: 6alswjd6@gmail.com
 twitter_username: jekyllrb
 github_username:  Minnnning
 

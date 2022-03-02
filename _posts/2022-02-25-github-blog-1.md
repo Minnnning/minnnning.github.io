@@ -71,7 +71,7 @@ cd 폴더명을 통해서 해당 폴더로 접속후
 
 `gem install jekyll bundler ` 을 입력해서 jekyll을 설치해준다
 
-###### 만약 설치과정에서 오류가 나온다면 [참조](https://unluckyjung.github.io/develop-setting/2021/01/20/Mac-Jekyll-Setting/)
+###### 만약 설치과정에서 오류가 나온다면 [참조](https://unluckyjung.github.io/develop-setting/2021/01/20/Mac-Jekyll-Setting/){:target="_blank"}
 
 클론한 폴더 안의 모든 파일을 지우고( readme.md파일을 지운다) 
 

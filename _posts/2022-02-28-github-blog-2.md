@@ -6,7 +6,7 @@ categories: github
 tags: git blog
 ---
 
-저번 글에서 jekyll을 실행해서 블로그를 github.io에 띄웠다 이번에는 자신의 블로그에 테마 적용하는법은 작성해본다 테마마다 적용하는 방법이 약간씩 다르다 또 테마의 구현된 기능을 적용해 본다
+저번 글에서 jekyll을 실행해서 블로그를 github.io에 띄웠다 이번에는 자신의 블로그에 테마 적용하는법은 작성해본다 테마마다 적용하는 방법이 약간씩 다르다
 
 &nbsp;
 
@@ -14,9 +14,9 @@ tags: git blog
 
 jekyll을 이용하는 테마는 엄청 많은데 자신의 블로그의 취향에 따라 정하면 된다
 
-- [http://jekyllthemes.org](http://jekyllthemes.org/)
-- [https://github.com/topics/jekyll-theme](https://github.com/topics/jekyll-theme)
-- [https://jekyllthemes.io/free](https://jekyllthemes.io/free)
+- [http://jekyllthemes.org](http://jekyllthemes.org/){:target="_blank"}
+- [https://github.com/topics/jekyll-theme](https://github.com/topics/jekyll-theme){:target="_blank"}
+- [https://jekyllthemes.io/free](https://jekyllthemes.io/free){:target="_blank"}
 
 위 사이트에서 원하는 테마를 선택하고 github페이지를 들어가서 테마를 다운 받는다
 
@@ -160,7 +160,7 @@ yml파일에서 테마를 monophase롤 바꿨는데 정상적으로 인식은 �
 
 &nbsp;
 
-해결하기위해 theme를 remote_theme: monophase로 바꿨다 [참고한 사이트](https://github.com/jekyll/jekyll/issues/8468)
+해결하기위해 theme를 remote_theme: monophase로 바꿨다 [참고한 사이트](https://github.com/jekyll/jekyll/issues/8468){:target="_blank"}
 
 바꾸고 다시 `bundle exec jekyll serve` 를 했는데
 
