@@ -6,9 +6,7 @@ categories: github
 tags: git blog
 ---
 
-github블로그에 테마를 적용시켰으니 블로그를 꾸며야한다
-
-이번에는 블로그 이름 바꾸기와 테마의 기능 사용하기
+github블로그에 테마를 적용시켰으니 블로그를 꾸며야한다 이번에는 블로그 이름 바꾸기와 테마의 기능을 사용한다
 
 &nbsp;
 
@@ -129,3 +127,4 @@ _data 폴더에 들어가서 `touch social.yml `을 만들고 안에 본인의 �
 <center>
 <img alt="스크린샷 2022-03-02 오후 10 53 07" src="https://user-images.githubusercontent.com/80758613/156374816-f351ac0c-6f6d-4755-93c8-fe765e664be6.png" style="zoom:33%;">
 </center>
+
