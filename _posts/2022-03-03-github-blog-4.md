@@ -3,12 +3,14 @@ layout: post
 title: "github 블로그 글쓰기"
 date:   2022-03-03 14:35:47 +0900
 categories: github
-tags: git blog
+tags: git
 ---
 
 이제 블로그를 만들었으니 글을 써야 한다 + 글 올리기 github 블로그에서 글을 쓰기 위해서는 markdown이라는 파일을 알아야 한다
 
 마크다운은 마크업 언어의 일종으로 쉽게 읽고 쓰기가 가능하고 html로 변환이 가능하다 마크다운은 텍스트 편집기에서도 작성이 가능하고 다양한 형태로 바꿀 수 있기 때문에 많이 이용한다
+
+---
 
 &nbsp;
 
@@ -38,6 +40,8 @@ tags: git blog
 
   제목은 제목을 작성한뒤에 아래줄에 =를 작성
 
+  &nbsp;
+
 - 부제목
 
   부제목은 부제목 작성후 밑에 - 작성한다
@@ -46,11 +50,13 @@ tags: git blog
   <img alt="스크린샷 2022-03-03 오후 2 55 42" src="https://user-images.githubusercontent.com/80758613/156505200-bc96c3ca-a114-4c6f-8782-d539820f3370.png" style="zoom:33%;">
   </center>
 
+  &nbsp;
+
 - 글머리
 
-#글머리 사용 #뒤에 띄어쓰기 한번을 한뒤에 작성 1~6개까지 사용 가능하며 점점 글씨 크기가 작아진다
+  #글머리 사용 #뒤에 띄어쓰기 한번을 한뒤에 작성 1~6개까지 사용 가능하며 점점 글씨 크기가 작아진다
 
-#한개는 제목 효과 ##2개는 부제목
+  #한개는 제목 효과 ##2개는 부제목
 
 <center>
 <img alt="스크린샷 2022-03-03 오후 2 51 52" src="https://user-images.githubusercontent.com/80758613/156504664-1ccbdda4-d3cb-4d84-a066-3ea024a5aba8.png" style="zoom:33%;">

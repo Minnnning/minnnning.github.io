@@ -3,10 +3,12 @@ layout: post
 title: "github 블로그 만들기(2)"
 date:   2022-02-28 16:06:47 +0900
 categories: github
-tags: git blog
+tags: git
 ---
 
 저번 글에서 jekyll을 실행해서 블로그를 github.io에 띄웠다 이번에는 자신의 블로그에 테마 적용하는법은 작성해본다 테마마다 적용하는 방법이 약간씩 다르다
+
+---
 
 &nbsp;
 
