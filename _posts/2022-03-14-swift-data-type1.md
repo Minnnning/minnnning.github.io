@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Swift 데이터 타입 (1)"
-date:   2022-03-14 15:35:47 +0900
+date:   2021-11-22 15:35:47 +0900
 categories: Swift
 tags: Int Bool Float Double Character String 데이터타입
 ---
