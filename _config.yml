@@ -30,6 +30,8 @@ email: 6alswjd6@gmail.com
 twitter_username: jekyllrb
 github_username:  Minnnning
 
+paginate: 6
+paginate_path: "/page/:num/"
 
 # Build settings
 remote_theme: zivhub/monophase
@@ -37,6 +39,7 @@ remote_theme: zivhub/monophase
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.

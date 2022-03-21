@@ -70,6 +70,7 @@ PLATFORMS
   arm64-darwin-20
 
 DEPENDENCIES
+  jekyll-paginate
   monophase
 
 BUNDLED WITH
