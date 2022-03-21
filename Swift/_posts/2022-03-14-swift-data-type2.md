@@ -2,7 +2,7 @@
 layout: post
 title: "Swift 데이터 타입 (2)"
 date:   2021-11-23 15:30:47 +0900
-categories: Swift
+categories:
 tags: 타입추론 타입별칭 Tuple Array Dictionary Set
 ---
 

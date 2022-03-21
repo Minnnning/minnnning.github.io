@@ -2,7 +2,7 @@
 layout: post
 title:  "첫번째 글입니다"
 date:   2022-02-24 16:41:47 +0900
-categories: 잡담
+categories:
 last_modified_at: 2022-02-25 15:27:15 +9000
 ---
 

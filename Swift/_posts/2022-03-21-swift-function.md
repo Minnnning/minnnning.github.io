@@ -2,7 +2,7 @@
 layout: post
 title: "Swift 함수"
 date:   2021-12-14 15:35:47 +0900
-categories: Swift
+categories:
 tags: 함수
 ---
 

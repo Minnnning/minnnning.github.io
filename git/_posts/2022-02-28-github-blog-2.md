@@ -2,7 +2,7 @@
 layout: post
 title: "github 블로그 만들기(2)"
 date:   2022-02-28 16:06:47 +0900
-categories: github
+categories:
 tags: git
 ---
 

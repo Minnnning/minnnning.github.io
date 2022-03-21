@@ -2,7 +2,7 @@
 layout: post
 title: "github 블로그 만들기(3)"
 date:   2022-03-02 21:06:47 +0900
-categories: github
+categories:
 tags: git
 ---
 
@@ -129,4 +129,3 @@ _data 폴더에 들어가서 `touch social.yml `을 만들고 안에 본인의 �
 <center>
 <img alt="스크린샷 2022-03-02 오후 10 53 07" src="https://user-images.githubusercontent.com/80758613/156374816-f351ac0c-6f6d-4755-93c8-fe765e664be6.png" style="zoom:33%;">
 </center>
-

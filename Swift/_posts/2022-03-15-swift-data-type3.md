@@ -2,7 +2,7 @@
 layout: post
 title: "Swift 데이터 타입 (3) 열거형"
 date:   2021-11-23 15:35:47 +0900
-categories: Swift
+categories:
 tags: 열거형
 ---
 

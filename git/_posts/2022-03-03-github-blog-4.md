@@ -2,7 +2,7 @@
 layout: post
 title: "github 블로그 글쓰기"
 date:   2022-03-03 14:35:47 +0900
-categories: github
+categories:
 tags: git
 ---
 
