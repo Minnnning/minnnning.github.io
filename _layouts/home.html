@@ -31,10 +31,15 @@ layout: default
 {% if paginator %}
   <div class="pagination">
     {% if paginator.previous_page %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}"> Previous </a>
+      <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}"> Previous </a> <!-- 보여주는 페이지 버튼 -->
     {% else %}
-      <span class="pagination-item newer">Previous</span>
+      <span class="pagination-item newer">Previous</span> <!-- 페이지 버튼 활성화시에 -->
     {% endif %}
+
+    {% if paginator.page %} <!-- 버튼 중간에 현재 페이지 번호 추가-->
+      <span class="pagination-item newer"> {{ paginator.page }} </span>
+    {% endif %}
+
     {% if paginator.next_page %}
       <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}"> Next </a>
     {% else %}
