@@ -54,12 +54,14 @@
 
     &:hover,
     &:focus {
-      text-decoration: line-through;
+      font-size: 130%;
+      font-weight: bold;
     }
   }
 
   a.current {
-    text-decoration: line-through;
+    font-size: 130%;
+    font-weight: bold;
   }
 }
 
