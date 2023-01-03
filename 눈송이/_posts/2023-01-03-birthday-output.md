@@ -202,9 +202,9 @@ data의 값을 따로 추출해서 변수에 저장해 html에 보여줄 수 있
 
 위 js코드에서 .then((data)=> 이후 부분이 그 과정이다
 
+[fetch](https://minnnning.github.io/자바스크립트/2023/01/03/fetch.html){:target="*_blank"}*
 
 
-*fetch의 다른 방식들은 따로 작성할 예정*
 
 &nbsp;
 
