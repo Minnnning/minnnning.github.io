@@ -15,8 +15,50 @@ layout: default
         </a>
       </h2>
 
-      <time datetime="{{ post.date | date_to_xmlschema }}" class="post-meta">{{ post.date | date_to_string }}</time>
 
+      <div class="post-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}" >{{ post.date | date_to_string }}</time>
+        
+        <!-- 카테고리-->
+        {% if post.categories.size > 0 %}
+        <span> • </span>
+        <span class="post-categories-section">
+          <i class="post-categories-icon fas fa-folder"></i>
+          <ul class="post-categories">
+            {%- for category in post.categories -%}
+              <li>
+                {% assign slugified_category = category | slugify %}
+                {%- if site.categories_path -%}
+                  <a class="post-category" href="{{ site.categories_path | relative_url }}#{{ slugified_category }}">{{ category }}</a>
+                {%- else -%}
+                  <span class="post-category">{{ category }}</span>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </span>
+        {% endif %}
+        {% if post.tags.size > 0 %}
+        <span> • </span>
+        <span class="post-tags-section">
+          <i class="post-tags-icon fas fa-tag"></i>
+          <ul class="post-tags">
+            {%- for tag in post.tags -%}
+              <li>
+                {% assign slugified_tag = tag | slugify %}
+                {%- if site.tags_path -%}
+                  <a class="post-tag" href="{{ site.tags_path | relative_url }}#{{ slugified_tag }}">{{ slugified_tag }}</a>
+                {%- else -%}
+                  <span class="post-tag">{{ slugified_tag }}</span>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </span>
+        {% endif %}
+      </div>
+      
+      
       <p class="post-excerpt">
         {% if post.description %}
           {{ post.description | strip_html }}
