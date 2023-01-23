@@ -20,7 +20,7 @@ useEffect에서 마운트(처음)/ 언마운트(사라질때)/ 업데이트시 �
 
 useEffect는 2가지 인자가 들어가는데 첫번째 인자는 함수고 두번째 인자는 배열이다 `useEffect(function,[deps])` 배열 부분에 어떤 값이 들어가는지에 따라 언제 작업을 하는지 결정한다
 
-1. **배열인자가 없을때**
+**1. 배열인자가 없을때**
 
 ``` js
 import React, { useState, useEffect } from "react";
@@ -54,7 +54,7 @@ export default UseEffectTest;
 
 &nbsp;
 
-2. **빈 배열일 때**
+**2 . 빈 배열일 때**
 
 ``` js
 import React, { useState, useEffect } from "react";
@@ -90,7 +90,7 @@ export default UseEffectTest;
 
 &nbsp;
 
-3. **배열에 변수 이름**
+**3. 배열에 변수 이름**
 
 ``` js
 import React, { useState, useEffect } from "react";
