@@ -1,5 +1,5 @@
 ---
-layout:post
+layout: post
 title: "useEffect 사용하기"
 date:   2023-01-22 15:35:47 +0900
 categories:
