@@ -1,9 +1,9 @@
 ---
 layout: post
 title: "React-Router"
-date:   2023-01-23 15:35:47 +0900
+date: 2023-01-25 13:35:47 +0900
 categories:
-tags:link router
+tags: link router
 ---
 
 리액트는 싱글 페이지 어플리케이션이다 싱글 어플리케이션과 멀티 어플리케이션 차이는 말 그대로 하나의 페이지 어플리케이션, 여러개 페이지의 어플리케이션이다
@@ -174,4 +174,270 @@ export default About;
 
 &nbsp;
 
-### URL쿼리스트링
+### URL 파라미터
+
+URL파라미터는 주소 경로에 유동적인 값을 넣는것이다 주로 특정 데이터를 조회할 때 사용된다
+
+새로운 컴포넌트를 생성
+
+``` js
+//Profile.js
+import React from "react";
+import { useParams } from 'react-router-dom';
+
+const data ={
+	a: {
+		name:"민정",
+		number:1
+	},
+	b: {
+		name:"철수",
+		number:2
+	}
+}
+
+function Profile() {
+    const params = useParams();
+    const profile = data[params.username];
+
+    return (
+        <div>
+        <h1>사용자 프로필</h1>
+        {profile ? (
+            <div>
+            <h2>{profile.name}</h2>
+            <p>{profile.number}</p>
+            </div>
+            ) : (
+            <p>존재하지 않는 프로필입니다.</p>
+            )}
+        </div>
+
+    )
+}
+
+export default Profile;
+```
+
+프로파일에 값이 존재한다면 이름과 번호를 보여주고 아니라면 존재하지 않는다라고 출력한다
+
+``` js
+//App.js
+import React from "react";
+import { Route, Routes, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Home from "./components/Home";
+import About from "./components/About";
+import Profile from "./components/Profile";
+
+function App () {
+
+	return (
+		<>
+		<h1>app page route 위</h1>
+		<Routes>
+			<Route path='/' element={<Home/>}></Route>
+			<Route path='/about/*' element={<About/>}></Route>
+			<Route path="/profiles/:username" element={<Profile />} />
+		</Routes>
+		<h1>app page route 아래</h1>
+		</>
+	)
+	
+}
+export default App;
+```
+
+app.js에 `/profiles/:username`를 추가하고 URL파라미터는 `:`를 사용한다 이제 링링크를 이용해서 주소를 결정하면된다
+
+``` js
+//home.js
+import React from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+
+function Home() {
+
+    return (
+        <>
+        <h1>홈 입니다.</h1>
+        <Link to='/about' className="button"> about 이동 버튼</Link>
+        <Link to="/profiles/a">a의 프로필</Link>
+        <Link to="/profiles/b">b의 프로필</Link>
+        </>
+    )
+}
+export default Home;
+```
+
+<table><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214492307-8fae7bd7-502a-4ac9-bfed-ea6d16501c5e.png" style="zoom:50%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214492313-7a7226e2-1d07-4f86-8ca9-b221d2a76e5b.png" style="zoom:50%;" /></center></td></table>
+
+만약 주소경로가 올바르게 입력되지 않았다면 c입력
+
+<center>
+<img src="https://user-images.githubusercontent.com/80758613/214492502-de002474-b440-4665-a580-fe442bb28aec.png" style="zoom:40%;">
+</center>
+
+Profile 컴포넌트에 작성한것처럼 존재하지 않는 프로파일이라고 나온다 
+
+&nbsp;
+
+&nbsp;
+
+### URL 쿼리스트링
+
+쿼리스트링은 키워드 검색, 페이지네이션(페이지 이동), 정렬 방식등 데이터 조회에 필요한 옵션을 전달할 때 사용한다
+
+쿼리스트링은 `?`뒤에오며 key=value로 되어있다 여러개로 사용할려면 `&`를 사용한다
+
+``` js
+//About.js 변경
+import React from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import Detail from "./Detail";
+
+function About() {
+    const location = useLocation();
+    return (
+        <>
+        <h1>about 페이지</h1>
+        <h1>소개</h1>
+        <p>리액트 라우터를 사용해 보는 프로젝트입니다.</p>
+        <p>pathname: {location.pathname} </p>
+        <p>쿼리스트링: {location.search} </p>
+        <p>state: {location.state} </p>
+        <p>key: {location.key} </p>
+        <Link to='detail' className="button"> detail 이동 버튼</Link>
+        <Routes>
+            <Route path='/detail' element={<Detail/>}></Route>
+        </Routes>
+        </>
+    )
+}
+export default About;
+```
+
+`useLocation`은 객체를 반환하며 현재 보고있는 페이지의 정보를 가지고 있다
+
+* pathname: 현재 주소의 경로(쿼리스트링 제외)
+* search: ?를 포함한 쿼리스트링 값
+* hash: 주소의 # 문자열 뒤의 값
+* state: 페이지로 이동할때 임의로 넣을 수 있는 값
+* key: 위에서 location 객체의 고유값 초기에는 default 페이지가 변경될때 고유값 생성
+
+&nbsp;
+
+about 페이지에서 `?detail=true&mode=1`를 뒤에 추가
+
+<table><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214497209-0c5f0dae-d1bd-4bc4-a98d-2ece5b33343d.png" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214497214-f311af0b-6e31-472f-85dd-a36b391de437.png" style="zoom:30%;" /></center></td></table>
+
+쿼리스트링에서 값을 가져올 때 javascript는 `useSearchParams`를 사용하면 쉽게 다룰 수 있다
+
+`useSearchParams`는 배열을 반환하고 첫번째 원소는 쿼리파라미터를 조회하거나 수정하는 메서드들이 담긴 객체를 반환한다 `get`은 쿼리 파라미터 조회 만약 존재하지 않는다면 null로 조회된다  `set`쿼리 파라미터 업데이트
+
+읽기 메서드
+
+* `searchParams.get(key)` 특정 key의 value를 가져옴 2개면 제일먼저 나온 value
+* `searchParams.getAll(key) ` 특정 key의 모든 value를 가져옴
+* `searchParams.toString()` 쿼리 스트링을 string 형태로 리턴
+
+변경 메서드
+
+* `searchParams.set(key, value)` 인자로 전달한 key 값을 value 로 설정, 기존에 값이 존재했다면 그 값은 삭제됨
+* `searchParams.append(key, value)` 기존 값을 변경하거나 삭제하지 않고 추가하는 방식
+
+&nbsp;
+
+두번째 원소로 쿼리 파라미터를 객체형태로 업데이트 할 수 있는 함수 반환(쿼리 전체를 변경)
+
+``` js
+import React from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import Detail from "./Detail";
+
+function About() {
+    const [searchParams, setSearchParams] = useSearchParams();
+    const detail = searchParams.get('detail');
+    const mode = searchParams.get('mode');
+    const onToggleDetail = () => {
+        setSearchParams({ mode, detail: detail === 'true' ? false : true });
+      };
+    
+    const onIncreaseMode = () => {
+        const nextMode = mode === null ? 1 : parseInt(mode) + 1;
+        setSearchParams({ mode: nextMode, detail });
+      };
+
+    return (
+        <>
+        <h1>about 페이지</h1>
+        <h1>소개</h1>
+        <p>리액트 라우터를 사용해 보는 프로젝트입니다.</p>
+        <p>detail: {detail}</p>
+        <p>mode: {mode}</p>
+        <button onClick={onToggleDetail}>Toggle detail</button>
+        <button onClick={onIncreaseMode}>mode + 1</button>
+
+        <Link to='detail' className="button"> detail 이동 버튼</Link>
+        <Routes>
+            <Route path='/detail' element={<Detail/>}></Route>
+        </Routes>
+        </>
+    )
+}
+export default About;
+```
+
+get과 setSearchParams 사용
+
+<table><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214500310-000792bc-a18d-4617-b5cd-271d4bb5795a.png" style="zoom:40%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214500317-c0f05ce2-2a62-4a1b-9c9a-b839dd4abcb4.png" style="zoom:40%;" /></center></td></table>
+
+&nbsp;
+
+``` js
+import React from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
+import Detail from "./Detail";
+
+function About() {
+    const [searchParams, setSearchParams] = useSearchParams();
+    
+    const setSortParams = () => {
+        searchParams.set('sort', 'clear');
+        setSearchParams(searchParams);
+    };
+    const appendSortParams = () => {
+        searchParams.append("sort", "hello-world");
+        setSearchParams(searchParams);
+    };
+
+    return (
+        <>
+        <h1>about 페이지</h1>
+        <h1>소개</h1>
+        <p>리액트 라우터를 사용해 보는 프로젝트입니다.</p>
+       
+        <button onClick={setSortParams}>setSortParams</button>
+        <button onClick={appendSortParams}>appendSortParams</button>
+
+        <Link to='detail' className="button"> detail 이동 버튼</Link>
+        <Routes>
+            <Route path='/detail' element={<Detail/>}></Route>
+        </Routes>
+        </>
+    )
+}
+export default About;
+```
+
+<center>
+<img src="https://user-images.githubusercontent.com/80758613/214504992-9ff02932-aa4c-4b63-a59f-63f0b89b9c27.png" style="zoom:40%;">
+</center>
+
+<center><font size="2em">기본 About 페이지</font></center>
+
+<table><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214505076-c94214d6-60a8-4f6d-9260-720aed79f8cb.png" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/214505416-6127707b-d85d-4e73-8fab-2e679533ce3d.png" style="zoom:30%;" /></center></td></table>
+
+<center><font size="2em">set과 append 버튼</font></center>
