@@ -47,8 +47,9 @@ export default UseEffectTest;
 **렌더링이 완료될 때 마다 useEffect 실행된다**  `console.log("useEffect!!", count)`를 그냥 해당 위치에 작성한는것과 같은 결과지만 이건 렌더링 이후 실행된다
 
  <center>
-<img src="https://user-images.githubusercontent.com/80758613/213913544-8c84f84c-e7d5-45b9-80a4-c0d21b56a2be.png" style="zoom:40%;">
+<img src="https://user-images.githubusercontent.com/80758613/213913544-8c84f84c-e7d5-45b9-80a4-c0d21b56a2be.png" style="zoom:50%;">
 </center>
+
 
 &nbsp;
 
@@ -81,8 +82,9 @@ export default UseEffectTest;
 빈 배열이라면 **처음 실행시(마운트)에만 실행한다**
 
 <center>
-<img src="https://user-images.githubusercontent.com/80758613/213913671-64449495-f5ae-49de-bc5b-d33319357dbe.png" style="zoom:50%;">
+<img src="https://user-images.githubusercontent.com/80758613/213913671-64449495-f5ae-49de-bc5b-d33319357dbe.png" style="zoom:70%;">
 </center>
+
 
 
 
@@ -120,7 +122,7 @@ export default UseEffectTest;
 
 **특정 값이 변경 되었을 때만 재렌더링 된다** 여기서는 name은 변경되어도 useEffect가 실행되지 않지만 count가 변경되면 `console.log("useEffect!!", count)` 가 실행된다
 
-<table><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/213913955-9387d027-017f-4d78-9ef5-b04805153ca2.png" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/213913960-57f5722c-bbf1-4f10-980a-601d441c242d.png" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/213913961-d6b4f73e-4b3f-4185-90cf-da762757ef4c.png" style="zoom:30%;" /></center></td></table>
+<table><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/213913955-9387d027-017f-4d78-9ef5-b04805153ca2.png" style="zoom:60%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/213913960-57f5722c-bbf1-4f10-980a-601d441c242d.png" style="zoom:60%;" /></center></td><td><center><img alt="" src="https://user-images.githubusercontent.com/80758613/213913961-d6b4f73e-4b3f-4185-90cf-da762757ef4c.png" style="zoom:60%;" /></center></td></table>
 
 &nbsp;
 
@@ -165,8 +167,9 @@ const [count, setCount] = useState(0)
 &nbsp;
 
 <center>
-<img src="https://user-images.githubusercontent.com/80758613/213979894-97a9dfbf-5179-4bd8-a5ff-db6b4fc20029.png" style="zoom:40%;">
+<img src="https://user-images.githubusercontent.com/80758613/213979894-97a9dfbf-5179-4bd8-a5ff-db6b4fc20029.png" style="zoom:60%;">
 </center>
+
 
 1번고 2번은 기본출력이라 무시하고 3번째 줄부터 본다면 `useEffect !`가 먼저 실행되고 버튼을 누르기직전에 return이 실행되어서 값이 1이 콘솔에 나타나고 화면에는 2가 나타나게 된다 useEffect함수가 다시 시작되기 직전에 return이 시작되는것을 알수 있다 따라서 화면에 보여지는 값보다 1이 작게된다
 

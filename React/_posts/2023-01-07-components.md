@@ -97,8 +97,9 @@ HTML
 ```
 
 <center>
-<img src="https://user-images.githubusercontent.com/80758613/211134978-220e2283-2c78-403b-a842-06bf21c44bc2.png" style="zoom:30%;">
+<img src="https://user-images.githubusercontent.com/80758613/211134978-220e2283-2c78-403b-a842-06bf21c44bc2.png" style="zoom:40%;">
 </center>
+
 
 두 코드는 모두 아래의 화면을 보여준다 코드를 보면 오히려 html코드가 더 간단하게 보인다 하지만 페이지가 복잡해진다면 html파일의 코드는 엄청나게 많아질것이다
 
@@ -170,8 +171,9 @@ export default App;
 컴포넌트를 항상 같은 값을 보여주는것이 었지만 props를 사용하면서 위 코드에서 title,sub등 속성을 바꿔서 작성하면 그에 따라 달라지는 출력값을 화면에 보여준다
 
 <center>
-<img src="https://user-images.githubusercontent.com/80758613/211141384-3cee2b5b-3eed-46c6-9642-c5be7f52fe35.png" style="zoom:30%;">
+<img src="https://user-images.githubusercontent.com/80758613/211141384-3cee2b5b-3eed-46c6-9642-c5be7f52fe35.png" style="zoom:50%;">
 </center>
+
 
 &nbsp;
 
@@ -190,8 +192,9 @@ Contents.defaultProps = {//기본값
 ```
 
 <center>
-<img src="https://user-images.githubusercontent.com/80758613/211141959-3f8d1b37-9825-4040-9127-8efdc0025026.png" style="zoom:30%;">
+<img src="https://user-images.githubusercontent.com/80758613/211141959-3f8d1b37-9825-4040-9127-8efdc0025026.png" style="zoom:50%;">
 </center>
+
 
 &nbsp;
 
