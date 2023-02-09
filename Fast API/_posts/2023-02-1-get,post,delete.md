@@ -36,6 +36,7 @@ def root():
 post를 하는 경로와 동작을 생성해야된다
 
 ``` python
+//main.py
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -75,21 +76,7 @@ def create_city(city: City):
 get을 통해서 원하는 값 받아오기오기와 전체의 값을 받아 올 수 있다
 
 ``` python
-from fastapi import FastAPI
-from pydantic import BaseModel
-
-app = FastAPI()
-
-db = []
-
-class City(BaseModel):
-    name: str
-    capital: str
-    
-@app.get("/")
-def root():
-    return {"Hello":"World!"}
-
+//main.py
 @app.get('/cities') # 저장된 전체 도시정보 가져오기 
 def get_cities():
     results =[]
@@ -103,13 +90,6 @@ def get_city(city_id:int):
     city = db[city_id-1]
     
     return { 'name':city['name'],'capital':city['capital']}
-
-    
-@app.post('/cities') #도시 정보 저장
-def create_city(city: City):
-    db.append(city.dict())
-    
-    return db[-1]
 ```
 
 `app.get(경로)`경로를 보면 두개의 get이 다른 경로를 나타내는걸 알 수 있다
@@ -133,42 +113,7 @@ db리스트에서 입력값의 -1의 인덱스(0부터 시작해서 -1함)의 �
 ### delete
 
 ``` python
-from fastapi import FastAPI
-from pydantic import BaseModel
-
-app = FastAPI()
-
-db = []
-
-class City(BaseModel):
-    name: str
-    capital: str
-    
-@app.get("/")
-def root():
-    return {"Hello":"World!"}
-
-@app.get('/cities') # 저장된 전체 도시정보 가져오기 
-def get_cities():
-    results =[]
-    for city in db:
-        results.append({'name':city['name'],'capital':city['capital']})
-        
-    return results
-
-@app.get('/cities/{city_id}') #선택한 아이디 도시정보 가져오기
-def get_city(city_id:int):
-    city = db[city_id-1]
-    
-    return { 'name':city['name'],'capital':city['capital']}
-
-    
-@app.post('/cities') #도시 정보 저장
-def create_city(city: City):
-    db.append(city.dict())
-    
-    return db[-1]
-
+//main.py
 @app.delete('/cities/{city_id}') # 도시 정보 삭제
 def delete_city(city_id:int): 
     db.pop(city_id-1)
@@ -209,6 +154,10 @@ a를 입력 했을때 `get_city2`대신 `get_city1`을 실행시키고 싶다면
 위 코드에서 경로가 같은 2개가 있다 get_city와 delete_city는 경로가 같지만 주소창에 입력하면 delete는 실행되지 않고 get_city가 실행된다
 
 왜냐하면 브라우저는 기본적으로 get방식을 이용하기 때문에 선언 순서를 바꾸더라도 get 방식인 `get_city`를 실행시킨다
+
+&nbsp;
+
+&nbsp;
 
 
 
