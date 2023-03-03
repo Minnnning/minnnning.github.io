@@ -38,7 +38,7 @@
 
 내가 호스팅하고 싶은 디렉토리롤 들어가서 `firebase init`을 통해 프로젝트를 초기화 시킨다 (프로젝트를 firebase와 연결시키는 과정 내가 작성한 폴더나 파일은 초기화 안됨)
 
-``` ? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices.
+``` tex
 (Press <spaces to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
 
 • Realtime Database: Configure a security rules file for Realtime Database and (optionally) provision default instance o Firestore: Configure security rules and indexes files for Firestore
@@ -58,7 +58,7 @@ o Hosting: Set up GitHub Action deploys
 
 &nbsp;
 
-```
+```tex
 === Project Setup
 
 First, let's associate this project directory with a Firebase project.
@@ -80,7 +80,7 @@ Don't set up a default project
 
 &nbsp;
 
-```  
+```  tex
 ? what do you want to use as your public directory?(public)
 ```
 
@@ -88,7 +88,7 @@ Don't set up a default project
 
 &nbsp;
 
-``` 
+``` tex
 ? Configure as a single-page app (rewrite all url to/ index.html)?(y/N)
 ```
 
@@ -96,7 +96,7 @@ Don't set up a default project
 
 &nbsp;
 
-```
+```tex
 ? Set up automatic buids and deploys with github?
 ```
 
