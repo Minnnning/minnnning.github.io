@@ -352,6 +352,18 @@ public class CommentController {
     public List<Comment> list() {
         return this.commentRepository.findAll();
     }
+  
+  	@GetMapping("/{id}")
+    public ResponseEntity<Comment> getComment(@PathVariable Integer id) {
+        Optional<Comment> optionalComment = commentRepository.findById(id);
+
+        if (optionalComment.isPresent()) {
+            Comment comment = optionalComment.get();
+            return new ResponseEntity<>(comment, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
     @PostMapping
     public ResponseEntity<String> createComment(@RequestBody Comment comment) {
@@ -412,5 +424,6 @@ public class CommentController {
 
 * /comments	get방식 -> 모든 데이터를 배열로 반환한다
 * /comments    post방식 -> 입력받은 데이터를 저장한다
+* /comments/{id}    get방식 -> 해당 id comment를 가져온다
 * /comments/{id}    put방식 -> 해당 id comment를 수정한다
 * /comments/{id}    delete방식 -> 해당 id comment를 삭제한다
