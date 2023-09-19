@@ -4,7 +4,7 @@
 
 react에서 요청을 보내서 받은 데이터를 사용해야 연결이 완료 된것이다 하지만 cors 오류 때문에 정보를 받아오지 못한다 이것을 해결하기위해 sping-boot controller 클래스 상단에 어노테인션을 추가해야한다
 
-`@CrossOrigin(origins = "http://localhost:3000")`을 추가해서 리액트가 실행되는 3000포트에서 사용할 수 있도록 한다
+`@CrossOrigin(origins = "*")`을 추가해서 모든곳에서 사용할 수 있도록 한다
 
 &nbsp;
 
@@ -347,4 +347,3 @@ const PostEdit = () => {
 export default PostEdit;
 
 ```
-
