@@ -23,6 +23,14 @@ https://five-tracker-718.notion.site/c78a6da32ac04c39b3edb9fbea7ae252?pvs=4
 
 ## java 설치하기
 
+intellij에서 sdk 추가로도 가능하다
+<center>
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/5fb1501d-9dea-45e1-a943-5d271a191063" style="zoom:40%;">
+</center>
+<center>
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/39351816-adb7-4d23-a242-1153005222de" style="zoom:40%;">
+</center>
+
 `brew install openjdk@17`  java 17 버전 기준
 
 설치후 path를 지정해야한다
@@ -91,7 +99,8 @@ public class Hello {
 &nbsp;
 
 ### 로컬에서 실행 시키기
-
+그냥 인텔리제이 상단 삼각형 눌러도 된다
+&npsp;
 해당 프로젝트 경로에서 빌드하기
 
 ```
@@ -163,10 +172,19 @@ spring.datasource.password=
 ### 데이터베이스 파일 생성
 
 spring.datasource.url에 데이터베이스 파일 위치를 설정 했기 때문에 해당위치에 파일을 만들어줘야 한다
-
+-------------
+맥
 터미널에서 `cd ~`로 홈으로 이동
-
 `touch local.mv.db`로 데이터 베이스 파일을 생성한다
+-------------
+윈도우cmd실행
+`type NUL > local.mv.db` CMD에서 빈 파일 생성 명령어
+dir 명령어로 생성 확인 가능
+-------------
+파일을 생성하지 않는다면 오류발생
+<center>
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/0663275d-438c-40e4-a051-b69714d74418" style="zoom:40%;">
+</center>
 
 &nbsp;
 
@@ -427,3 +445,16 @@ public class CommentController {
 * /comments/{id}    get방식 -> 해당 id comment를 가져온다
 * /comments/{id}    put방식 -> 해당 id comment를 수정한다
 * /comments/{id}    delete방식 -> 해당 id comment를 삭제한다
+
+### 테스트
+테스트를 위해 postman다운로드 -> 웹 개발시 많이 사용
+&nbsp;
+**post 요청**
+<center>
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/6a0e07ca-03e6-4831-b46a-6ef7ada82a6c" style="zoom:50%;">
+</center>
+&nbsp;
+**get 요청 리스트 조회**
+<center>
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/d761efa5-555f-4eea-8c2e-7f7dce0e05e6" style="zoom:50%;">
+</center>
