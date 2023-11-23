@@ -23,12 +23,12 @@ https://five-tracker-718.notion.site/c78a6da32ac04c39b3edb9fbea7ae252?pvs=4
 
 ## java 설치하기
 
-intellij에서 sdk 추가로도 가능하다
+intellij에서 jdk 추가로도 가능하다
 <center>
-<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/5fb1501d-9dea-45e1-a943-5d271a191063" style="zoom:40%;">
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/5fb1501d-9dea-45e1-a943-5d271a191063" style="zoom:80%;">
 </center>
 <center>
-<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/39351816-adb7-4d23-a242-1153005222de" style="zoom:40%;">
+<img src="https://github.com/Minnnning/minnnning.github.io/assets/80758613/39351816-adb7-4d23-a242-1153005222de" style="zoom:80%;">
 </center>
 
 `brew install openjdk@17`  java 17 버전 기준
@@ -173,10 +173,10 @@ spring.datasource.password=
 
 spring.datasource.url에 데이터베이스 파일 위치를 설정 했기 때문에 해당위치에 파일을 만들어줘야 한다
 <hr>
-<storng>맥</storng> : 터미널에서 `cd ~`로 홈으로 이동
+**맥** : 터미널에서 `cd ~`로 홈으로 이동
 `touch local.mv.db`로 데이터 베이스 파일을 생성한다
 <hr>
-<storng>윈도우</storng> :cmd실행
+**윈도우** : cmd실행
 `type NUL > local.mv.db` CMD에서 빈 파일 생성 명령어
 dir 명령어로 생성 확인 가능
 <hr>
