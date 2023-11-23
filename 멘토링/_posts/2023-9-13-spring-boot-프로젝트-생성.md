@@ -173,10 +173,10 @@ spring.datasource.password=
 
 spring.datasource.url에 데이터베이스 파일 위치를 설정 했기 때문에 해당위치에 파일을 만들어줘야 한다
 <hr>
-터미널에서 `cd ~`로 홈으로 이동
+<storng>맥</storng> : 터미널에서 `cd ~`로 홈으로 이동
 `touch local.mv.db`로 데이터 베이스 파일을 생성한다
 <hr>
-윈도우cmd실행
+<storng>윈도우</storng> :cmd실행
 `type NUL > local.mv.db` CMD에서 빈 파일 생성 명령어
 dir 명령어로 생성 확인 가능
 <hr>
