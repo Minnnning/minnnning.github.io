@@ -289,3 +289,75 @@ struct ContentView: View {
 }
 ```
 
+&nbsp;
+
+### 커스텀 컨테이너 뷰
+
+하위 뷰의 한가지 단점은 컨테이너 뷰의 컨텐츠가 정적이라는 것이다 따라서 하위뷰에 포함될 뷰를 동적으로 지정할 수 없다 하지만 **ViewBulider** 클로저 속성을 이용한다면 가능하다
+
+``` swift
+import SwiftUI
+
+struct ContentView: View {
+    
+    var body: some View {
+        VStack {
+            Text("asdfas")
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Good world!")
+            MyVStack {
+                Text("Hello, World1!")
+                Text("Hello, World2!")
+            }
+        }
+        .padding()
+    }
+    
+   
+}
+
+struct MyVStack<Content: View>: View {
+    let content: () -> Content
+    init(@ViewBuilder content: @escaping () -> Content) {// ViewBuilder 속성사용
+        self.content = content
+    }
+    
+    var body: some View {
+        VStack(spacing:15) {
+            content()
+        }
+        .font(.title)
+    }
+}
+```
+
+&nbsp;
+
+### 레이블 뷰
+
+레이블 뷰는 아이콘과 텍스트가 나란히 배치된 형태의 두요소로 구성된다는 점이 다른 뷰들과 다르다 이미지는 sf symbol, 이미지등 사용이 가능하다 
+
+``` swift
+import SwiftUI
+
+struct ContentView: View {
+    
+    var body: some View {
+        VStack {
+            Text("asdfas")
+            Image(systemName: "globe")
+                .imageScale(.large)
+                .foregroundColor(.accentColor)
+            Text("Good world!")
+            Label("welcome", systemImage: "person.crop.circle")
+        }
+        .padding()
+    }  
+}
+```
+
+<center>
+<img src="https://github.com/user-attachments/assets/cb8bf7a7-fa5b-4583-a423-6f5d70118dbd" style="zoom:50%;">
+</center>
