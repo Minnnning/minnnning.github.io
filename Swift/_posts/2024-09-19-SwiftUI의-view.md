@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "swiftui의 view"
+title: "SwiftUI의 View"
 tags: view swiftui
 ---
 
