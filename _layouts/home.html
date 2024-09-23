@@ -73,44 +73,61 @@ layout: default
 
 {% if paginator %}
   <div class="pagination">
-    <!-- '<<' 버튼 -->
-    {% if paginator.previous_page %}
-      <a class="pagination-item first-page" href="{{ paginator.first_page_path | relative_url }}"><<</a>
+
+    <!-- 맨앞으로 이동 ('<<') -->
+    {% if paginator.page > 1 %}
+      <a href="{{ paginator.first_page_path | relative_url }}"><<</a>
     {% else %}
-      <span class="pagination-item first-page disabled"><<</span>
+      <span class="disabled"><<</span>
     {% endif %}
-    
-    <!-- '<' 버튼 -->
+
+    <!-- 한 페이지 앞으로 ('<') -->
     {% if paginator.previous_page %}
-      <a class="pagination-item previous" href="{{ paginator.previous_page_path | relative_url }}"><</a>
+      <a href="{{ paginator.previous_page_path | relative_url }}"><</a>
     {% else %}
-      <span class="pagination-item previous disabled"><</span>
+      <span class="disabled"><</span>
     {% endif %}
-    
-    <!-- 페이지 번호 표시 -->
-    {% for page in (1..paginator.total_pages) %}
-      {% if page == paginator.page %}
-        <span class="pagination-item current">{{ page }}</span>
-      {% elsif page == 1 or page == paginator.total_pages or page == paginator.page or (page >= paginator.page - 2 and page <= paginator.page + 2) %}
-        <a class="pagination-item" href="{{ paginator.base_path }}/page{{ page }}">{{ page }}</a>
-      {% elsif page == paginator.page - 3 or page == paginator.page + 3 %}
-        <span class="pagination-item dots">...</span>
+
+    <!-- 첫 페이지 링크 -->
+    <a href="{{ paginator.first_page_path | relative_url }}">1</a>
+
+    <!-- 앞쪽 생략 부분 -->
+    {% if paginator.page > 4 %}
+      <span>...</span>
+    {% endif %}
+
+    <!-- 중간 페이지 번호 표시 -->
+    {% for page in (paginator.page | minus: 2)..(paginator.page | plus: 2) %}
+      {% if page > 1 and page < paginator.total_pages %}
+        {% if page == paginator.page %}
+          <strong>{{ page }}</strong> <!-- 현재 페이지 강조 -->
+        {% else %}
+          <a href="{{ paginator.base_path }}/page{{ page }}">{{ page }}</a>
+        {% endif %}
       {% endif %}
     {% endfor %}
-    
-    <!-- '>' 버튼 -->
-    {% if paginator.next_page %}
-      <a class="pagination-item next" href="{{ paginator.next_page_path | relative_url }}">></a>
-    {% else %}
-      <span class="pagination-item next disabled">></span>
+
+    <!-- 뒤쪽 생략 부분 -->
+    {% if paginator.page < paginator.total_pages | minus: 3 %}
+      <span>...</span>
     {% endif %}
-    
-    <!-- '>>' 버튼 -->
+
+    <!-- 마지막 페이지 링크 -->
+    <a href="{{ paginator.base_path }}/page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
+
+    <!-- 한 페이지 뒤로 ('>') -->
     {% if paginator.next_page %}
-      <a class="pagination-item last-page" href="{{ paginator.base_path }}/page{{ paginator.total_pages }}">>></a>
+      <a href="{{ paginator.next_page_path | relative_url }}">></a>
     {% else %}
-      <span class="pagination-item last-page disabled">>></span>
+      <span class="disabled">></span>
     {% endif %}
+
+    <!-- 맨뒤로 이동 ('>>') -->
+    {% if paginator.page < paginator.total_pages %}
+      <a href="{{ paginator.base_path }}/page{{ paginator.total_pages }}">>></a>
+    {% else %}
+      <span class="disabled">>></span>
+    {% endif %}
+
   </div>
 {% endif %}
-
