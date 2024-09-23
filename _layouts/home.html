@@ -94,6 +94,8 @@ layout: default
     <!-- 앞쪽 생략 부분 -->
     {% if paginator.page > 4 %}
       <span>...</span>
+    {% else %}
+      <span> </span>
     {% endif %}
 
     <!-- 중간 페이지 번호 표시 -->
@@ -110,6 +112,8 @@ layout: default
     <!-- 뒤쪽 생략 부분 -->
     {% if paginator.page < paginator.total_pages | minus: 3 %}
       <span>...</span>
+    {% else %}
+      <span> </span>
     {% endif %}
 
     <!-- 마지막 페이지 링크 -->
