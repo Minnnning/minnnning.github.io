@@ -113,7 +113,7 @@ layout: default
     {% endif %}
 
     <!-- 마지막 페이지 링크 -->
-    <a href="{{ paginator.base_path }}/page{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
+    <a href="{{ paginator.base_path }}/page/{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
 
     <!-- 한 페이지 뒤로 ('>') -->
     {% if paginator.next_page %}
@@ -124,7 +124,7 @@ layout: default
 
     <!-- 맨뒤로 이동 ('>>') -->
     {% if paginator.page < paginator.total_pages %}
-      <a href="{{ paginator.base_path }}/page{{ paginator.total_pages }}">>></a>
+      <a href="{{ paginator.base_path }}/page/{{ paginator.total_pages }}">>></a>
     {% else %}
       <span class="disabled">>></span>
     {% endif %}
