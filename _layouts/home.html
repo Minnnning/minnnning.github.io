@@ -73,20 +73,44 @@ layout: default
 
 {% if paginator %}
   <div class="pagination">
+    <!-- '<<' 버튼 -->
     {% if paginator.previous_page %}
-      <a class="pagination-item newer" href="{{ paginator.previous_page_path | relative_url }}"> Previous </a> <!-- 보여주는 페이지 버튼 -->
+      <a class="pagination-item first-page" href="{{ paginator.first_page_path | relative_url }}"><<</a>
     {% else %}
-      <span class="pagination-item newer">Previous</span> <!-- 페이지 버튼 활성화시에 -->
+      <span class="pagination-item first-page disabled"><<</span>
     {% endif %}
-
-    {% if paginator.page %} <!-- 버튼 중간에 현재 페이지 번호 추가-->
-      <span class="pagination-item newer"> {{ paginator.page }} </span>
+    
+    <!-- '<' 버튼 -->
+    {% if paginator.previous_page %}
+      <a class="pagination-item previous" href="{{ paginator.previous_page_path | relative_url }}"><</a>
+    {% else %}
+      <span class="pagination-item previous disabled"><</span>
     {% endif %}
-
+    
+    <!-- 페이지 번호 표시 -->
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <span class="pagination-item current">{{ page }}</span>
+      {% elsif page == 1 or page == paginator.total_pages or page == paginator.page or (page >= paginator.page - 2 and page <= paginator.page + 2) %}
+        <a class="pagination-item" href="{{ paginator.base_path }}/page{{ page }}">{{ page }}</a>
+      {% elsif page == paginator.page - 3 or page == paginator.page + 3 %}
+        <span class="pagination-item dots">...</span>
+      {% endif %}
+    {% endfor %}
+    
+    <!-- '>' 버튼 -->
     {% if paginator.next_page %}
-      <a class="pagination-item older" href="{{ paginator.next_page_path | relative_url }}"> Next </a>
+      <a class="pagination-item next" href="{{ paginator.next_page_path | relative_url }}">></a>
     {% else %}
-      <span class="pagination-item older">Next</span>
+      <span class="pagination-item next disabled">></span>
+    {% endif %}
+    
+    <!-- '>>' 버튼 -->
+    {% if paginator.next_page %}
+      <a class="pagination-item last-page" href="{{ paginator.base_path }}/page{{ paginator.total_pages }}">>></a>
+    {% else %}
+      <span class="pagination-item last-page disabled">>></span>
     {% endif %}
   </div>
 {% endif %}
+
