@@ -97,7 +97,7 @@ layout: default
     {% endif %}
 
     <!-- 중간 페이지 번호 표시 -->
-    {% for page in (paginator.page | minus: 2)..(paginator.page | plus: 2) %}
+    {% for page in (paginator.page | minus: 3)..(paginator.page | plus: 3) %}
       {% if page > 1 and page < paginator.total_pages %}
         {% if page == paginator.page %}
           <strong>{{ page }}</strong> <!-- 현재 페이지 강조 -->
