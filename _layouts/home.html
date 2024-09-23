@@ -71,66 +71,100 @@ layout: default
   {% endfor %}
 </div>
 
+{% assign last_page_minus_one = paginator.total_pages | minus: 1 %}
+{% assign last_page_minus_two = paginator.total_pages | minus: 2 %}
+{% assign page_minus_two = paginator.page | minus: 2 %}
+{% assign page_plus_two = paginator.page | plus: 2 %}
+{% assign page_minus_three = paginator.page | minus: 3 %}
+{% assign page_plus_three = paginator.page | plus: 3 %}
+
 {% if paginator %}
   <div class="pagination">
 
-    <!-- 맨앞으로 이동 ('<<') -->
-    {% if paginator.page > 1 %}
-      <a href="{{ paginator.first_page_path | relative_url }}"><<</a>
-    {% else %}
-      <span class="disabled"><<</span>
-    {% endif %}
-
-    <!-- 한 페이지 앞으로 ('<') -->
     {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}"><</a>
+      <a class="pagination-item newer" href="{{ paginator.base_path }}/"> << </a>
     {% else %}
-      <span class="disabled"><</span>
+      <span class="pagination-item older"> << </span> 
     {% endif %}
 
-    <!-- 첫 페이지 링크 -->
-    <a href="{{ paginator.first_page_path | relative_url }}">1</a>
+    {% if paginator.page == 1 %}
+        <div class="pagination-item">
+          <strong> {{ paginator.page }} </strong> &nbsp;
+          <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_plus_two }}"> {{ page_plus_two }} </a> </small> &nbsp;
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_plus_three }}"> ... </a></span>
+        </div>
 
-    <!-- 앞쪽 생략 부분 -->
-    {% if paginator.page > 4 %}
-      <span>...</span>
-    {% else %}
-      <span> </span>
+      {% elsif paginator.page == 2 %}
+        <div class="pagination-item">
+          <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
+          <strong> {{ paginator.page }} </strong> &nbsp;
+          <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_plus_two }}"> {{ page_plus_two }} </a> </small> &nbsp;
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_plus_three }}"> ... </a></span>
+        </div>
+
+        {% elsif paginator.page == 3 %}
+        <div class="pagination-item">
+          {% if page_minus_two == 1 %}
+            <small><span> <a href="{{ paginator.base_path }}/"> {{ page_minus_two }} </a></span></small> &nbsp;
+          {% else %}
+            <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> ... </a></span> &nbsp;
+          {% endif %}
+          <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
+          <strong> {{ paginator.page }} </strong> &nbsp;
+          <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_plus_two }}"> {{ page_plus_two }} </a> </small> &nbsp;
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_plus_three }}"> ... </a></span>
+        </div>
+
+      {% elsif paginator.page > 2 and paginator.page < last_page_minus_two %}
+        <div class="pagination-item-center">
+          {% if page_minus_three == 1 %}
+            <span> <a href="{{ paginator.base_path }}/"> ... </a></span> &nbsp;
+          {% else %}
+            <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_three }}"> ... </a></span> &nbsp;
+          {% endif %}
+          <small><a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> {{ page_minus_two }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
+          <strong> {{ paginator.page }} </strong> &nbsp;
+          <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_plus_two }}"> {{ page_plus_two }} </a> </small> &nbsp;
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_plus_three }}"> ... </a></span>
+        </div>
+
+      {% elsif paginator.page < last_page_minus_one %}
+        <div class="pagination-item-center">
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_three }}"> ... </a></span> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> {{ page_minus_two }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
+          <strong> {{ paginator.page }} </strong> &nbsp;
+          <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_plus_two }}"> {{ page_plus_two }} </a> </small>
+        </div>
+
+      {% elsif paginator.page < paginator.total_pages %}
+        <div class="pagination-item">
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_three }}"> ... </a></span> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> {{ page_minus_two }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
+          <strong> {{ paginator.page }} </strong> &nbsp;
+          <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small>
+        </div>
+
+      {% else %}
+        <div class="pagination-item">
+          <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_three }}"> ... </a></span> &nbsp;
+          <small><a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> {{ page_minus_two }} </a> </small> &nbsp;
+          <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
+          <strong> {{ paginator.page }} </strong>
+        </div>
     {% endif %}
 
-    <!-- 중간 페이지 번호 표시 -->
-    {% for page in (paginator.page | minus: 3)..(paginator.page | plus: 3) %}
-      {% if page > 1 and page < paginator.total_pages %}
-        {% if page == paginator.page %}
-          <strong>{{ page }}</strong> <!-- 현재 페이지 강조 -->
-        {% else %}
-          <a href="{{ paginator.base_path }}/page{{ page }}">{{ page }}</a>
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-
-    <!-- 뒤쪽 생략 부분 -->
-    {% if paginator.page < paginator.total_pages | minus: 3 %}
-      <span>...</span>
-    {% else %}
-      <span> </span>
-    {% endif %}
-
-    <!-- 마지막 페이지 링크 -->
-    <a href="{{ paginator.base_path }}/page/{{ paginator.total_pages }}">{{ paginator.total_pages }}</a>
-
-    <!-- 한 페이지 뒤로 ('>') -->
     {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}">></a>
+      <a class="pagination-item newer" href="{{ paginator.base_path }}/page/{{ paginator.total_pages }}">>></a>
     {% else %}
-      <span class="disabled">></span>
-    {% endif %}
-
-    <!-- 맨뒤로 이동 ('>>') -->
-    {% if paginator.page < paginator.total_pages %}
-      <a href="{{ paginator.base_path }}/page/{{ paginator.total_pages }}">>></a>
-    {% else %}
-      <span class="disabled">>></span>
+      <span class="pagination-item older"> >> </span> 
     {% endif %}
 
   </div>
