@@ -236,7 +236,7 @@ a[href^="#fnref:"] {
 
 .pagination-item {
   float: left;
-  width: 50%;
+  width: 15%;
   padding: var(--spacer);
   border: 1px solid var(--border-color);
 
@@ -254,7 +254,7 @@ a[href^="#fnref:"] {
 /* 가운데 pagination 아이템의 너비 설정 */
 .pagination-item-center {
   float: left;
-  width: 70%;
+  width: 100%;
   padding: var(--spacer);
   border: 1px solid var(--border-color);
 

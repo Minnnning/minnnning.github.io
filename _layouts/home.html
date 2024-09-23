@@ -88,7 +88,7 @@ layout: default
     {% endif %}
 
     {% if paginator.page == 1 %}
-        <div class="pagination-item">
+        <div class="pagination-item-center">
           <strong> {{ paginator.page }} </strong> &nbsp;
           <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
           <small><a href="{{ paginator.base_path }}/page/{{ page_plus_two }}"> {{ page_plus_two }} </a> </small> &nbsp;
@@ -96,7 +96,7 @@ layout: default
         </div>
 
       {% elsif paginator.page == 2 %}
-        <div class="pagination-item">
+        <div class="pagination-item-center">
           <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
           <strong> {{ paginator.page }} </strong> &nbsp;
           <small><a href="{{ paginator.next_page_path | relative_url }}"> {{ paginator.page | plus: 1 }} </a> </small> &nbsp;
@@ -105,7 +105,7 @@ layout: default
         </div>
 
         {% elsif paginator.page == 3 %}
-        <div class="pagination-item">
+        <div class="pagination-item-center">
           {% if page_minus_two == 1 %}
             <small><span> <a href="{{ paginator.base_path }}/"> {{ page_minus_two }} </a></span></small> &nbsp;
           {% else %}
@@ -144,7 +144,7 @@ layout: default
         </div>
 
       {% elsif paginator.page < paginator.total_pages %}
-        <div class="pagination-item">
+        <div class="pagination-item-center">
           <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_three }}"> ... </a></span> &nbsp;
           <small><a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> {{ page_minus_two }} </a> </small> &nbsp;
           <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
@@ -153,7 +153,7 @@ layout: default
         </div>
 
       {% else %}
-        <div class="pagination-item">
+        <div class="pagination-item-center">
           <span> <a href="{{ paginator.base_path }}/page/{{ page_minus_three }}"> ... </a></span> &nbsp;
           <small><a href="{{ paginator.base_path }}/page/{{ page_minus_two }}"> {{ page_minus_two }} </a> </small> &nbsp;
           <small><a href="{{ paginator.previous_page_path | relative_url }}"> {{ paginator.page | minus: 1 }} </a> </small> &nbsp;
