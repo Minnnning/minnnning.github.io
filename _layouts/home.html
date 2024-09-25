@@ -61,12 +61,26 @@ layout: default
       
       
       <p class="post-excerpt">
-        {% if post.description %}
-          {{ post.description | strip_html }}
-        {% else %}
-          {{ post.excerpt | strip_html }}
-        {% endif %}
+        <div class="excerpt-content">
+          {%- assign post_image = post.excerpt_image | default: '/assets/images/default-image.jpeg' -%}
+          {%- if post_image and post_image != 'NO_EXCERPT_IMAGE' -%}
+            <div class="post-image-container" >
+                <a class="post-image" href="{{ post.url | relative_url }}">
+                    <img src="{{ post_image | relative_url }}" alt="{{ post.title }}" style="text-align: center;" >
+                </a>
+            </div>
+            {%- endif -%}
+    
+            <div class="post-text-container">
+                {% if post.description %}
+                  {{ post.description | strip_html }}
+                {% else %}
+                  {{ post.excerpt | strip_html }}
+                {% endif %}
+            </div>
+        </div>
       </p>
+  
     </div>
   {% endfor %}
 </div>

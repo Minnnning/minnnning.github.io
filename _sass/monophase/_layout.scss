@@ -376,3 +376,14 @@ a.pagination-item:hover {
     font-weight: 500;
   }
 }
+
+.post-image-container {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  margin: 20px 0; /* 이미지 위아래 여백 설정 */
+}
+
+.post-image img {
+  max-width: 100%; /* 이미지가 콘텐츠 너비를 넘지 않도록 */
+  height: auto; /* 이미지 비율 유지 */
+}

@@ -33,6 +33,14 @@ github_username:  Minnnning
 paginate: 7
 paginate_path: "/page/:num/"
 
+defaults:
+  - scope:
+      path: ""  # 사이트 전반에 적용
+      type: "posts"  # 모든 포스트에 적용
+    values:
+      layout: "post"  # 기본 레이아웃을 'post'로 설정
+
+
 # Build settings
 remote_theme: zivhub/monophase
 

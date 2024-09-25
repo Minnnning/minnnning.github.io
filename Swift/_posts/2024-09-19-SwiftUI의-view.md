@@ -2,6 +2,7 @@
 layout: post
 title: "SwiftUI의 View"
 tags: view swiftui
+excerpt_image: "https://github.com/user-attachments/assets/99a264ce-633d-4155-9641-927ffe9d7792"
 ---
 
 스위프트로 앱을 만들때 swiftui를 이용한다면 계층구조를 가지고 있다 App -> Scene(여러개) -> View(여러개) 이렇게 존재한다 여기서 app은 애플리케이션의 실행중인 각 인스턴스의 시작 및 생명주기를 처리한다 Scene은 하나의 영역 섹션을 나타낸다 일반적으로 전체 장치화면을 차지하는 창형태이다 view는 버튼, 레이블, 텍스트 필드등 사용자 인터페이스의 기본적인 빌딩블록이다
