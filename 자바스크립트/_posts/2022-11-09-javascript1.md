@@ -4,6 +4,7 @@ title: "자바스크립트 문법(1)"
 date:   2022-11-09 16:35:47 +0900
 categories:
 tags: 
+excerpt: "자바스크립트에서 변수의 종류는 4가지의 형태가 있다 문자형(string), 숫자형(number), 논리형(boolean), 빈(Null) 데이터가 있다"
 ---
 
 ### 변수

@@ -4,6 +4,7 @@ title: "자바스크립트 객체 -내장 객체"
 date:   2022-12-25 14:35:47 +0900
 categories:
 tags: 
+excerpt: "자바 스크립트는 객체(object) 기반 언어이다 객체에는 기능(method)과 속성(property)이 있다"
 ---
 
 자바 스크립트는 객체(object) 기반 언어이다 객체에는 기능(method)과 속성(property)이 있다

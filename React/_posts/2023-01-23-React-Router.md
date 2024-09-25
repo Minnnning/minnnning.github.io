@@ -4,6 +4,7 @@ title: "React-Router"
 date: 2023-01-25 13:35:47 +0900
 categories:
 tags: link router
+excerpt_image: "https://user-images.githubusercontent.com/80758613/214004018-ddc799b9-8e25-4f38-b272-b08527d651d5.png"
 ---
 
 리액트는 싱글 페이지 어플리케이션이다 싱글 어플리케이션과 멀티 어플리케이션 차이는 말 그대로 하나의 페이지 어플리케이션, 여러개 페이지의 어플리케이션이다

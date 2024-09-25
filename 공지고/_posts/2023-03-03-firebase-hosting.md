@@ -1,3 +1,8 @@
+---
+layout: post
+excerpt_image: "https://user-images.githubusercontent.com/80758613/222618117-7fc6f06f-d47d-4e05-984c-594af25d97a2.png"
+---
+
 이번 공지고 프로젝트에서 파이어베이스의 리얼타임 데이터 베이스와 파이어베이스의 호스팅 기능을 이용했다 호스팅을 매우 쉽고 간단하게 하는 방법이다
 
 &nbsp;

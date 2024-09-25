@@ -4,6 +4,7 @@ title: "Swift 옵셔널"
 date:   2021-12-16 15:35:47 +0900
 categories:
 tags: 옵셔널
+excerpt: "옵셔널은 nil을 사용할 수 있는 데이터 타입이다 nil을 사용 가능하다는 것은 그 변수나 상수에 값이 있거나 없을 수도 있다는 것이다"
 ---
 
 ## **옵셔널** Optional

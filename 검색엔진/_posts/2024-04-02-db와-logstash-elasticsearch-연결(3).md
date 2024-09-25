@@ -1,3 +1,8 @@
+---
+layout: post
+excerpt_image: "https://github.com/Minnnning/minnnning.github.io/assets/80758613/54426edc-c793-4cdc-814f-83580e5711a6"
+---
+
 데이터를 크롤링해서 db에 저장했다면 검색 엔진을 테스트할 수 있도록 logstash와 elasticsearch의 연결이 필요하다 먼저 logstash의 yml파일을 수정해서 db에서 데이터를 가져올 수 있도록 한다
 
 ## Logstash와 Elasticseatch 설치

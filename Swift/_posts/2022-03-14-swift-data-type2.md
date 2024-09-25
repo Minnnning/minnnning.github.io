@@ -4,6 +4,7 @@ title: "Swift 데이터 타입 (2)"
 date:   2021-11-23 15:30:47 +0900
 categories:
 tags: 타입추론 타입별칭 Tuple Array Dictionary Set
+excerpt: "스위프트에서는 변수나 상수를 선언할 때 타입을 명시하지 않아도 데이터로 타입을 자동으로 추론시켜준다"
 ---
 
 ### **타입 추론**

@@ -1,3 +1,9 @@
+---
+layout: post
+excerpt_image: "https://github.com/Minnnning/minnnning.github.io/assets/80758613/5fb1501d-9dea-45e1-a943-5d271a191063"
+excerpt: "이번에는 요청을 처리할 api를 spring boot로 작성하는 과정입니다 현재 만들어야할 api는 crud로 이렇게 4가지를 만들어야한다"
+---
+
 # spring boot로 backend 작업
 
 이번에는 요청을 처리할 api를 spring boot로 작성하는 과정입니다

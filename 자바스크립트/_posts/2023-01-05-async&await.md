@@ -4,6 +4,7 @@ title: "async & await"
 date:   2023-01-05 03:35:47 +0900
 categories:
 tags: async await
+excerpt_image: "https://user-images.githubusercontent.com/80758613/210627234-fdd958bf-5f94-4a12-baa9-c326a7705581.png"
 ---
 
 비동기적으로 사용할 때 콜백함수를 이용했다 하지만 콜백 함수가 계속 반복되면(콜백지옥) 가독성도 떨어지고 작성하기도 힘들어진다 여기서 나온것이 Promise를 이용한 async & await이다

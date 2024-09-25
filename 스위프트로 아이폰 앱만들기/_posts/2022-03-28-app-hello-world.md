@@ -4,6 +4,8 @@ title: "Hello World! 출력"
 date:   2022-01-21 14:35:47 +0900
 categories:
 tags: 아울렛변수 액션함수
+excerpt_image: "https://user-images.githubusercontent.com/80758613/160329169-7d79b712-7191-493b-8183-cfe4f148c548.png"
+excerpt: "변수와 비슷한 개념으로 특정 동작을 수행하기 위한 정보를 저장하는 곳 여기서는 입력한 텍스트를 저장하고 출력할 아울렛 변수에 넣는다"
 ---
 
 ## **아울렛 변수**

@@ -4,6 +4,7 @@ title: "Fast API get, post, delete 사용하기"
 date:   2023-02-01 15:35:47 +0900
 categories:
 tags: 
+excerpt_image: "https://user-images.githubusercontent.com/80758613/215980066-654d91b4-0385-4efa-a243-e414cbb5741d.png"
 ---
 
 fast api를 사용하기위해 기본적인 get,post,delete를 사용해보자 http의 대표적인 메소드로는 get, post, put, delete가 있다

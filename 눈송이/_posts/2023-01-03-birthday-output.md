@@ -4,6 +4,7 @@ title: "생일 출력하기"
 date:   2023-01-03 20:35:47 +0900
 categories:
 tags: 
+excerpt_image: https://user-images.githubusercontent.com/80758613/210351717-ad9f3053-40ee-4980-9af7-74554a9a66c1.png
 ---
 
 저장된 json파일을 이용해서 이름이나 id번호를 입력하면 해당된 사람의 생일을 출력하는것이다 
