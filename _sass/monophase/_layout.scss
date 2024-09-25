@@ -380,10 +380,11 @@ a.pagination-item:hover {
 .post-image-container {
   display: flex;
   justify-content: center; /* 수평 중앙 정렬 */
-  margin: 20px 0; /* 이미지 위아래 여백 설정 */
+  margin: 5px 0; /* 이미지 위아래 여백 설정 */
 }
 
 .post-image img {
-  max-width: 100%; /* 이미지가 콘텐츠 너비를 넘지 않도록 */
-  height: auto; /* 이미지 비율 유지 */
+  max-height: 40vh; /* 화면의 세로 30% */
+  width: auto; /* 이미지의 가로 비율을 자동으로 맞춤 */
+  object-fit: contain; /* 이미지 비율을 유지하면서 맞춤 */
 }
