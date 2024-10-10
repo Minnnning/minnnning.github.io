@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SwiftUI 실습 2"
-tags:  swiftui 
+tags:  swiftui ObservableObject EnvironmentObject
 excerpt_image: "https://github.com/user-attachments/assets/e27f7bba-0139-4bc6-b87e-3525700216d1"
 ---
 
