@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Swift에서 url 이미지 출력"
+title: "SwiftUI에서 url 이미지 출력"
 tags:  swiftui AsyncImage
 ---
 
