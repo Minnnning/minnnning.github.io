@@ -127,9 +127,7 @@ struct AlamoView: View {
             }
             
             Button(action: {
-                Task {
                     fetchData()
-                }
             }) {
                 Text("Load Data")
                     .padding()
@@ -172,4 +170,10 @@ struct AlamoView: View {
 출력할때 형식 차이가 존재 하지만 fetchData 코드가 확실히 줄어들고 보기 편해졌다
 
 &nbsp;
+
+URLSession을 사용할때는 async/await를 사용했지만 Alamofire는 그렇지 않다
+
+그 이유는 Alamofire가 **클로저 기반의 비동기 작업 처리**를  제공하기 때문이다 클로저 기반 비동기 작업 처리란 비동기 작업이 완료되었을 때 실행될 코드 블록(클로저)을 미리 정의한 후 작업이 끝난 후 호출하는 방식을 의미한다
+
+ [클로저 설명](https://minnnning.github.io/swift/2024/07/02/스위프트-함수-메서드-클로저.html)
 
