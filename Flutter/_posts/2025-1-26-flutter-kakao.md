@@ -2,7 +2,7 @@
 layout: post
 title: "플러터에서 카카오 로그인 구현"
 tags:  flutter kakaologin
-excerpt_image: ""
+excerpt_image: "https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28"
 ---
 
 프로젝트에서 카카오 로그인 기능이 필요하기 때문에 카카오 로그인을 플러터에서 구현한다 카카오 로그인후 토큰까지 확인해본다
@@ -137,4 +137,131 @@ main.dart에서 키값을 추출할 수 있었다
 &nbsp;
 
 ### 4. main.dart
+
+이제 카카오톡 로그인을 실행하기 위해서 위젯을 생성한다
+
+``` dart
+import 'package:flutter/material.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk_common.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load(fileName: '.env');
+
+  KakaoSdk.init(nativeAppKey: dotenv.get('KAKAO_NATIVE_APP_KEY'));
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Kakao Login Demo',
+      home: const MyHomePage(title: 'Kakao Login'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String? _userNickname;
+  String? _userProfileImage;
+
+  Future<void> _loginWithKakao() async {
+    try {
+      if (await isKakaoTalkInstalled()) {
+        await UserApi.instance.loginWithKakaoTalk(); //앱이 존재하는 경우
+      } else {
+        await UserApi.instance.loginWithKakaoAccount(); //앱이 존재하지 않음
+      }
+      _fetchUserInfo(); //유저정보를 가져옴
+    } catch (error) {
+      print(await KakaoSdk.origin);
+      print('Login failed: $error');
+    }
+  }
+
+  Future<void> _fetchUserInfo() async {
+    try {
+      User user = await UserApi.instance.me();
+      setState(() {
+        print(user); //유저정보를 모두 보기 위함
+        _userNickname = user.kakaoAccount?.profile?.nickname;//닉네임, 이미지만 가져옴
+        _userProfileImage = user.kakaoAccount?.profile?.thumbnailImageUrl;
+      });
+    } catch (error) {
+      print('Failed to get user info: $error');
+    }
+  }
+
+  Future<void> _logout() async {
+    try {
+      await UserApi.instance.logout();
+      setState(() {
+        _userNickname = null;
+        _userProfileImage = null;
+      });
+    } catch (error) {
+      print('Logout failed: $error');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            _userProfileImage != null
+                ? CircleAvatar(
+                    backgroundImage: NetworkImage(_userProfileImage!),
+                    radius: 40,
+                  )
+                : const Icon(Icons.account_circle, size: 80),
+            const SizedBox(height: 10),
+            Text(
+              _userNickname ?? '로그인 해주세요',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: _userNickname == null ? _loginWithKakao : _logout,
+              child: Text(_userNickname == null ? '카카오 로그인' : '로그아웃'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+위 코드는 로그인을 하면 유저 데이터중 닉네임, 프로필 사진을 가져와서 저 이후 닉네임의 유무로 로그인을 확인한다 로그아웃은 저장한 데이터를 null로 다시 넣어 데이터를 초기화한다
+
+``` bash
+D/CompatibilityChangeReporter( 7540): Compat change id reported: *******,; UID ****; state: ENABLED
+I/flutter ( 7540): {id: *******, properties: {nickname: 김민정}, kakao_account: {profile_nickname_needs_agreement: false, profile: {nickname: 김민정}}, connected_at: 2024-11-02T10:59:32.000Z}
+```
+
+위 데이터는 가져온 유저 정보이다 초기 앱설정시 닉네임만 가져오도록 설정해서 profile에 nickname만 존재한다 만약 사진까지 허용하면 사진도 같이 받을 수 있다
+
+<table><td><center><img alt="" src="https://github.com/user-attachments/assets/79a706d9-5254-4c17-ac55-bea927a76273" style="zoom:40%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28" style="zoom:40%;" /></center></td></table> 
 
