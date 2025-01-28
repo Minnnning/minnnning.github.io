@@ -265,3 +265,4 @@ I/flutter ( 7540): {id: *******, properties: {nickname: 김민정}, kakao_accoun
 
 <table><td><center><img alt="" src="https://github.com/user-attachments/assets/79a706d9-5254-4c17-ac55-bea927a76273" style="zoom:40%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28" style="zoom:40%;" /></center></td></table> 
 
+위 코드에서 `print(await KakaoSdk.origin);`를 통해서 직접 키 해시를 확인하고 카카오 앱 설정에서 확인한 키 값으로 교체했더니 카카오 로그인이 정상적으로 실행되었다
