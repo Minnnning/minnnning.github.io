@@ -182,10 +182,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> _loginWithKakao() async {
     try {
-      if (await isKakaoTalkInstalled()) {
-        await UserApi.instance.loginWithKakaoTalk(); //앱이 존재하는 경우
-      } else {
-        await UserApi.instance.loginWithKakaoAccount(); //앱이 존재하지 않음
+      if (await isKakaoTalkInstalled()) { //앱 존재하는 경우
+        OAuthToken token = await UserApi.instance.loginWithKakaoTalk();
+        print('카카오톡으로 로그인 성공 ${token.accessToken}');
+      } else { //앱이 존재하지 않는 경우
+        OAuthToken token = await UserApi.instance.loginWithKakaoAccount();
+        print('카카오톡으로 로그인 성공 ${token.accessToken}');
       }
       _fetchUserInfo(); //유저정보를 가져옴
     } catch (error) {
@@ -257,11 +259,11 @@ class _MyHomePageState extends State<MyHomePage> {
 위 코드는 로그인을 하면 유저 데이터중 닉네임, 프로필 사진을 가져와서 저 이후 닉네임의 유무로 로그인을 확인한다 로그아웃은 저장한 데이터를 null로 다시 넣어 데이터를 초기화한다
 
 ``` bash
-D/CompatibilityChangeReporter( 7540): Compat change id reported: *******,; UID ****; state: ENABLED
+I/flutter ( 8616): 카카오톡으로 로그인 성공 jnK-84QiddghSqciI91qZELqq0X0fbDAAAAAAQorDKgAAAGUzAOlsdafsadfsdf
 I/flutter ( 7540): {id: *******, properties: {nickname: 김민정}, kakao_account: {profile_nickname_needs_agreement: false, profile: {nickname: 김민정}}, connected_at: 2024-11-02T10:59:32.000Z}
 ```
 
-위 데이터는 가져온 유저 정보이다 초기 앱설정시 닉네임만 가져오도록 설정해서 profile에 nickname만 존재한다 만약 사진까지 허용하면 사진도 같이 받을 수 있다
+위 데이터는 가져온 **유저 정보와 accesstoken**이다 초기 앱설정시 닉네임만 가져오도록 설정해서 profile에 nickname만 존재한다 만약 사진까지 허용하면 사진도 같이 받을 수 있다
 
 <table><td><center><img alt="" src="https://github.com/user-attachments/assets/79a706d9-5254-4c17-ac55-bea927a76273" style="zoom:40%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28" style="zoom:40%;" /></center></td></table> 
 
