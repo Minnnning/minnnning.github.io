@@ -62,6 +62,11 @@ layout: default
     {% endif %}
   </div>
 
+  <div class = "list_group my-3">
+    <a class = "list-group-item active disabled text-white">Table of Contents</a>
+    {% include toc.html html=content %}
+  </div>
+
   {{ content }}
 
   {% if jekyll.environment == "production" and site.disqus and page.comments != false %}
