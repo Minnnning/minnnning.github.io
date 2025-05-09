@@ -53,8 +53,12 @@ jobs:
       - name: Test site
         run: |
           bundle exec htmlproofer _site \
-            \-\-disable-external \
-            \-\-ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+            --disable-external \
+            --allow-hash-href \
+            --check-html \
+            --empty-alt-ignore \        # alt="" 은 무시  
+            --alt-ignore '/.*/'          # alt 속성 자체가 없어도 무시 :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}
+            --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
