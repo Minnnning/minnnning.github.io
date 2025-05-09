@@ -116,19 +116,21 @@ props는 properties의 줄임말로 프로퍼티라고도 한다 상위 컴포�
 
 프로퍼티에 문자열을 전달할 때는` ""`를 사용 이외에는 `{}`를 사용한다
 
-``` js
+``` javascript
 import React, {Component} from 'react';
 import './App.css';
 
 class Subject extends Component {
-	render() {
-		return(
-			<hedaer>
-				<h1 style={{color:this.props.color}}>{this.props.title}</h1>
-				{this.props.sub}
-			</hedaer>
-		);
-	}
+  render() {
+    const { color, title, sub } = this.props;
+
+    return (
+      <header>
+        <h1 style={{ color }}>{title}</h1>
+        {sub}
+      </header>
+    );
+  }
 }
 
 class TOC extends Component {
@@ -180,7 +182,7 @@ export default App;
 
 #### props의 기본값과 데이터 타입 지정
 
-``` js
+``` javascript
 import PropTypes from 'prop-types'// import부분 추가
 
 Contents.propTypes = {//데이터 타입
@@ -219,7 +221,7 @@ Contents.defaultProps = {//기본값
 
 #### 컴포넌트 파일 구조
 
-``` js
+``` javascript
 import React, {Component} from 'react';
 import PropTypes from 'prop-types' //기본값을 설정하기위함 기본값이 없다면 추가x
 
@@ -252,7 +254,7 @@ export default Contents;
 
 #### 메인 js 연결
 
-```js
+```javascript
 import React, {Component} from 'react';
 import TOC from './components/TOC' //각각의 파일 위치를 작성(연결)
 import Subject from './components/subject'

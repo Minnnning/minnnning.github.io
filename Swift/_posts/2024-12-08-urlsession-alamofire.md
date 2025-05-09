@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "URLSession과 Alamofire 비교하기"
-tags:  urlsession alamofire
+tags:  urlsession Alamofire
 excerpt_image: "https://github.com/user-attachments/assets/73dada4f-d9ac-498c-87fa-b9d49ee19edd"
 ---
 
