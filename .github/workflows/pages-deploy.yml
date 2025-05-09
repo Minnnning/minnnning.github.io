@@ -55,7 +55,6 @@ jobs:
           bundle exec htmlproofer _site \
             --disable-external \
             --allow-hash-href \
-            --empty-alt-ignore \        # alt="" 은 무시  
             --alt-ignore '/.*/'          # alt 속성 자체가 없어도 무시 :contentReference[oaicite:0]{index=0}:contentReference[oaicite:1]{index=1}
             --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 
