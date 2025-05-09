@@ -52,7 +52,7 @@ jobs:
 
       - name: Test site
         run: |
-          bundle exec htmlproofer _site \
+          bundle exec htmlproofer "_site${{ steps.pages.outputs.base_path }}" \
             \-\-disable-external \
             \-\-allow-hash-href \
             \-\-ignore-missing-alt \ 
