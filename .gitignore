@@ -25,3 +25,8 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
+
+# macOS Finder 임시 파일
+.DS_Store
+**/.DS_Store             # 모든 하위 디렉터리의 .DS_Store 무시
+
