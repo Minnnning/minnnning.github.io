@@ -2,7 +2,7 @@
 layout: post
 title: "Swift에서 Alamofire를 이용한 RESTAPI "
 tags:  Alamofire 
-excerpt_image: "https://github.com/user-attachments/assets/8bc3e5fc-d28e-4847-b29b-144e40e78a5e"
+image: "https://github.com/user-attachments/assets/8bc3e5fc-d28e-4847-b29b-144e40e78a5e"
 ---
 
 Alamofire는 swift에서 REST API를 쉽게 하기위해 만들어진 패키지이다 pod으로 설치가 가능하고 add/package를 통해서 프로젝트에 다운 받을 수 있다

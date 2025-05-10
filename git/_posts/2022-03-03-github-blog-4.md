@@ -4,7 +4,7 @@ title: "github 블로그 글쓰기"
 date:   2022-03-03 14:35:47 +0900
 categories:
 tags: git
-excerpt_image: "https://user-images.githubusercontent.com/80758613/156505200-bc96c3ca-a114-4c6f-8782-d539820f3370.png"
+image: "https://user-images.githubusercontent.com/80758613/156505200-bc96c3ca-a114-4c6f-8782-d539820f3370.png"
 ---
 
 이제 블로그를 만들었으니 글을 써야 한다 + 글 올리기 github 블로그에서 글을 쓰기 위해서는 markdown이라는 파일을 알아야 한다

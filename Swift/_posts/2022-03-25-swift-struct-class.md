@@ -4,7 +4,7 @@ title: "Swift 구조체, 클래스"
 date:   2021-12-17 15:35:47 +0900
 categories:
 tags: 구조체 클래스
-excerpt_image: "https://user-images.githubusercontent.com/80758613/160068894-505eec9f-0eda-42ae-92cc-a9ecd253bfdc.jpeg"
+image: "https://user-images.githubusercontent.com/80758613/160068894-505eec9f-0eda-42ae-92cc-a9ecd253bfdc.jpeg"
 excerpt: "데이터를 용도에 맞게 묶어서 표현하고자 할 때 유용하다 구조체 내부에 상수나 변수 또는 함수를 선언하고 이것을 인스턴스를 만들어서 사용할 수 있다 새로운 데이터 타입을 만드는 것과 비슷하다"
 ---
 

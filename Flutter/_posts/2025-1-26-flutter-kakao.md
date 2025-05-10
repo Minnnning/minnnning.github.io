@@ -2,7 +2,7 @@
 layout: post
 title: "플러터에서 카카오 로그인 구현"
 tags:  flutter kakaologin
-excerpt_image: "https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28"
+image: "https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28"
 ---
 
 프로젝트에서 카카오 로그인 기능이 필요하기 때문에 카카오 로그인을 플러터에서 구현한다 카카오 로그인후 토큰까지 확인해본다

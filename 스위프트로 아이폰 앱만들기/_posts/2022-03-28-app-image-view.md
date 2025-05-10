@@ -4,7 +4,7 @@ title: "이미지 뷰어"
 date:   2022-01-21 15:35:47 +0900
 categories:
 tags: 
-excerpt_image: "https://user-images.githubusercontent.com/80758613/160329768-a5ec994c-4832-433a-adb4-8d6dedc1599c.png"
+image: "https://user-images.githubusercontent.com/80758613/160329768-a5ec994c-4832-433a-adb4-8d6dedc1599c.png"
 ---
 
 아울렛 변수외 그냥 변수를 사용 초깃값 지정 버튼 이름 바꾸기와 스위치 상태에 따를 값 변경
