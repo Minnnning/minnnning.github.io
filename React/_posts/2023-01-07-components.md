@@ -4,7 +4,7 @@ title: "component and props"
 date:   2023-01-07 10:35:47 +0900
 categories:
 tags: component props
-excerpt_image: "https://user-images.githubusercontent.com/80758613/211134978-220e2283-2c78-403b-a842-06bf21c44bc2.png"
+image: "https://user-images.githubusercontent.com/80758613/211134978-220e2283-2c78-403b-a842-06bf21c44bc2.png"
 ---
 
 컴포넌트란 리액트로 만들어진 앱을 이루는 최소한의 단위이다 컴포넌트는 원래 복잡한 코드를 묶어서 개별적으로 수정 가능하고 재사용 할 수 있게 만든것이다 클래스형 컴포넌트와 함수형 컴포넌트가 있지만 여기서는 클래스 컴포넌트를 다룬다

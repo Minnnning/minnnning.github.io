@@ -2,7 +2,7 @@
 layout: post
 title: "URLSession과 Alamofire 비교하기"
 tags:  urlsession Alamofire
-excerpt_image: "https://github.com/user-attachments/assets/73dada4f-d9ac-498c-87fa-b9d49ee19edd"
+image: "https://github.com/user-attachments/assets/73dada4f-d9ac-498c-87fa-b9d49ee19edd"
 ---
 
  데이터를 주고 받기 위해  api를 이용한다 이때 SwiftUI에서는 기본으로 제공하는 URLSession과 패키지를 깔아서 사용하는 Alamofire가 있다 프로젝트 도중 2개를 혼용해서 사용했는데 각각의 장점과 단점을 알아볼려고 한다

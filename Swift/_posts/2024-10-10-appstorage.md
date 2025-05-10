@@ -2,7 +2,7 @@
 layout: post
 title: "AppStorage와 SceneStorage를 사용한 SwiftUI 데이터 지속성"
 tags:  swiftui AppStorage SceneStorage
-excerpt_image: "https://github.com/user-attachments/assets/b77d9feb-74c8-44c9-a68a-146981b96c22"
+image: "https://github.com/user-attachments/assets/b77d9feb-74c8-44c9-a68a-146981b96c22"
 ---
 
 앱을 사용할 때 앱을 다시 시작해도 저장해야하는 데이터들이 존재한다 예를 들어서 사용자의 기본 설정이나 사용자가 마지막으로 접근했을 때 화면으로 복구되기 원할때 유용하다 이런경우에 @AppStorage와 @SceneStorage를 사용할 수 있다

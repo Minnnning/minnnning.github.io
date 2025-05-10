@@ -2,7 +2,7 @@
 layout: post
 title: "SwiftUI 실습 5 "
 tags:  swiftui OutlineGroup DisclosureGroup
-excerpt_image: "https://github.com/user-attachments/assets/a6079de1-fd59-4ccb-b8e9-1de6e7a94969"
+image: "https://github.com/user-attachments/assets/a6079de1-fd59-4ccb-b8e9-1de6e7a94969"
 ---
 
 지금까지 List 뷰를 목록으로 표현할 때만 사용했다 목록 내에 계층적 정보를 표시하는 방법을 사용해서 탐색을 용이하게 한다 OutlineGroup을 사용한다면 디스클로저 컨트롤(리스트 옆에 화살표가 표시되어 접을 수 있음) 을 이용해서 리스트를 표시 할 수 있고 이와 비슷한 기능으로 DisclosureGroup을 사용할 수도 있다

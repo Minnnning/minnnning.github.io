@@ -2,7 +2,7 @@
 layout: post
 title: "SwiftUI Link와 네비게이션"
 tags:  swiftui List NavigationStack NavigationLink
-excerpt_image: "https://github.com/user-attachments/assets/7bb92be8-083b-40dc-9504-26eaa027b671"
+image: "https://github.com/user-attachments/assets/7bb92be8-083b-40dc-9504-26eaa027b671"
 ---
 
 SwiftUI의 List는 수직 방향의 리스트 형태로 정적 동적 데이터를 모두 표현할 수 있고 추가, 삭제, 순서 재정렬 기능을 수행한다 또한 터치했을때 다른 영역으로 이동이 가능한 Navigationstack컴포넌트와 NavigationLink컴포넌트를 이용한다

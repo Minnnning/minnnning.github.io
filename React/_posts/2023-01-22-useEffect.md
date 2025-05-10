@@ -4,7 +4,7 @@ title: "useEffect 사용하기"
 date:   2023-01-22 15:35:47 +0900
 categories:
 tags:
-excerpt_image: "https://user-images.githubusercontent.com/80758613/213913544-8c84f84c-e7d5-45b9-80a4-c0d21b56a2be.png"
+image: "https://user-images.githubusercontent.com/80758613/213913544-8c84f84c-e7d5-45b9-80a4-c0d21b56a2be.png"
 ---
 
 useEffect는 컴포넌트가 특정 작업(컴포넌트 렌더링 이후)을 실행할 수 있도록 하는 hook이다 (비동기 처리에 이용)

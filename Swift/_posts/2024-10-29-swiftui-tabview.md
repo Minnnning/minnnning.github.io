@@ -2,7 +2,7 @@
 layout: post
 title: "SwiftUI에서 TabView 사용하기 "
 tags:  swiftui TabView
-excerpt_image: "https://github.com/user-attachments/assets/de4e4ae8-e239-4849-a211-7a69fdeb8a15"
+image: "https://github.com/user-attachments/assets/de4e4ae8-e239-4849-a211-7a69fdeb8a15"
 ---
 
 TabView 컴포넌트는 탭 바에 있는 아이템을 사용자가 선택하거나 페이지 뷰 탭 스타일을 사용할 때 스와이프 동작을 만들어 여러 하위 뷰들 사이를 이동할 수 있게 해준다
