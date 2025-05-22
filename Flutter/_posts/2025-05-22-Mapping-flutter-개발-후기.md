@@ -37,6 +37,6 @@ Mapping 앱을 홍보하기 전에 안드로이드 버전을 만들어야했다(
 
 그렇게 앱개발을 완료하고 5월 21일 교육을 받던 도중에 출시 되었다고 연락이 왔다 앱을 출시하면서 처음 하는 프레임워크라 어려움이 많았지만 내가 생각한 아이디어를 실제로 구현해서 출시했다는 점이 매우 만족스러웠다 이제 다시 iOS버전 업데이트하고 코드 리팩토링을 하면서 flutter앱과 같이 업그레이드 해야겠다
 
-<table><td><center><img alt="" src="https://github.com/user-attachments/assets/623c8664-22c7-49bc-8d36-5895c974508a" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/4aec4806-1217-4a21-99fb-29f3bef5ac06" style="zoom:30%;" /></center></td></table>
+<center><table><td><center><img alt="" src="https://github.com/user-attachments/assets/623c8664-22c7-49bc-8d36-5895c974508a" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/4aec4806-1217-4a21-99fb-29f3bef5ac06" style="zoom:30%;" /></center></td></table></center>
 
-<table><td><center><img alt="" src="https://github.com/user-attachments/assets/23ad6f4c-208b-456e-a609-9f2aeb1519f0" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/8a100fd3-883a-447f-9d5e-5f2d3a2b53fe" style="zoom:30%;" /></center></td></table>
+<center><table><td><center><img alt="" src="https://github.com/user-attachments/assets/23ad6f4c-208b-456e-a609-9f2aeb1519f0" style="zoom:30%;" /></center></td><td><center><img alt="" src="https://github.com/user-attachments/assets/8a100fd3-883a-447f-9d5e-5f2d3a2b53fe" style="zoom:30%;" /></center></td></table></center>
