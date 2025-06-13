@@ -78,7 +78,7 @@ BIND9는 가장 널리 사용되는 오픈 소스 DNS 서버 소프트웨어이�
 sudo vi /etc/bind/named.conf.options
 ```
 
-```txt
+```smalltalk
 options {
     directory "/var/cache/bind";
 
@@ -117,7 +117,7 @@ options {
 sudo vi /etc/bind/named.conf.local
 ```
 
-``` txt
+``` smalltalk
 // naver.com에 대한 커스텀 설정
 zone "naver.com" {
     type master; // 이 서버가 "naver.com" 도메인의 마스터 서버임을 의미
@@ -136,7 +136,7 @@ zone "naver.com" {
 sudo vi /etc/bind/db.naver
 ```
 
-``` txt
+``` smalltalk
 $TTL    3600    ; 1 hour
 @       IN      SOA     ns1.naver.com. admin.naver.com. (
                           2023010101      ; Serial (YYYYMMDDNN)
