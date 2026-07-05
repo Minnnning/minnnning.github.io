@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: Minnnning's logs # the main title
 
-tagline: 드디어 된 클라우드 엔지니어. # it will display as the subtitle
+tagline: 정신을 차려보니 클라우드 엔지니어가 돼버렸다? # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   network & cloud engineer.
