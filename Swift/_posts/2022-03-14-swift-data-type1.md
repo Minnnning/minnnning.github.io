@@ -5,6 +5,7 @@ date:   2021-11-22 15:35:47 +0900
 categories:
 tags: [Int, Bool, Float, Double, Character, String]
 excerpt: "Int형은 정수를 표현하며 +,-를 포함한다 UInt는 0을 포함하지 않는 양의 정수를 표현한다"
+description: "Int형은 정수를 표현하며 +,-를 포함한다 UInt는 0을 포함하지 않는 양의 정수를 표현한다"
 ---
 
 ### **Int**

@@ -2,6 +2,7 @@
 layout: post
 title: "플러터에서 Provider와 Service 비교"
 tags: [flutter, Provider, Service]
+description: "Flutter로 앱을 개발할때 provider와 service의 역할이 헷갈렸기 때문에 각각에 대해서 정리하고 비교한다"
 ---
 
 Flutter로 앱을 개발할때 provider와 service의 역할이 헷갈렸기 때문에 각각에 대해서 정리하고 비교한다

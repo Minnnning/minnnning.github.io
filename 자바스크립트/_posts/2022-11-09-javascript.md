@@ -3,7 +3,8 @@ layout: post
 title: "자바스크립트 기초"
 date:   2022-11-09 15:35:47 +0900
 categories:
-tags: 
+tags:
+description: "자바스크립트는 html파일에서 sctipt테그 안에 작성 된다''"
 ---
 
 ### 자바스크립트 선언문

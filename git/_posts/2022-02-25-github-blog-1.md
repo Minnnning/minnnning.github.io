@@ -5,6 +5,7 @@ date:   2022-02-25 16:06:47 +0900
 categories:
 tags: [git]
 image: "https://user-images.githubusercontent.com/80758613/155680099-eeae1b73-cdfe-4c83-b2fc-7b51b9775ec7.png"
+description: "원래 네이버 블로그에서 공부한것을 정리했지만 네이버 블로그의 스마트에디터가 블루투스 키보드나 사파리와 맞지 않아서 다른 플랫폼을 찾아보다 github.io 블로그를 찾게 되었다"
 ---
 
 원래 네이버 블로그에서 공부한것을 정리했지만 네이버 블로그의 스마트에디터가 블루투스 키보드나 사파리와 맞지 않아서 다른 플랫폼을 찾아보다 github.io 블로그를 찾게 되었다

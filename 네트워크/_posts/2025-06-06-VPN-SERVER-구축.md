@@ -2,6 +2,7 @@
 layout: post
 image: "https://github.com/user-attachments/assets/16611905-7d78-4891-973a-6c836e15722f"
 tags: [VPN]
+description: "오토에버 클라우드 교육에서 VPN에 대해서 배워서 VPN을 직접 구축해볼려고 한다"
 ---
 
 ##  VPN 구축기

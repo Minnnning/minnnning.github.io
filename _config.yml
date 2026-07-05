@@ -6,7 +6,7 @@ theme: jekyll-theme-chirpy
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
 # If it has the same name as one of the files in folder `_data/locales`, the layout language will also be changed,
 # otherwise, the layout language will use the default value of 'en'.
-lang: en
+lang: ko
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
 timezone: Asia/Seoul
@@ -19,7 +19,7 @@ title: Minnnning's logs # the main title
 tagline: 정신을 차려보니 클라우드 엔지니어가 돼버렸다? # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  network & cloud engineer.
+  클라우드 엔지니어 minnnning의 기술 블로그. 네트워크, 클라우드(AWS/GCP), 리눅스, 개발(Python, Java, Swift, React) 학습 기록과 실무 경험을 공유합니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -60,7 +60,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: # fill in your Google Analytics ID
+    id: G-9LMC3ZNP0P
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
@@ -103,7 +103,7 @@ avatar: "/assets/img/profile.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
-social_preview_image: # string, local or CORS resources
+social_preview_image: /assets/img/profile.png
 
 # boolean type, the global switch for TOC in posts.
 toc: true

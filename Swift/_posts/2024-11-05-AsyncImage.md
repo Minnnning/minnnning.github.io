@@ -2,6 +2,7 @@
 layout: post
 title: "SwiftUI에서 url 이미지 출력"
 tags: [SwiftUI, AsyncImage]
+description: "프로젝트 도중 이미지를 서버에서 받는데 aws를 사용하고 있어서 버킷을 이용하다 보니 url된 이미지를 표시해야 했다 애플에서는 이럴 때 사용할 수 있는 AsyncImage를 제공한다"
 ---
 
 프로젝트 도중 이미지를 서버에서 받는데 aws를 사용하고 있어서 버킷을 이용하다 보니 url된 이미지를 표시해야 했다 애플에서는 이럴 때 사용할 수 있는 AsyncImage를 제공한다

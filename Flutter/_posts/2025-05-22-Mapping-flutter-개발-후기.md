@@ -1,6 +1,7 @@
 ---
 tags: [flutter]
 image: "https://github.com/user-attachments/assets/3becfa92-1a22-4d4b-8c70-682c83877836"
+description: "Mapping 앱을 홍보하기 전에 안드로이드 버전을 만들어야했다(아무래도 사용자들이 아이폰만 있다면 유저수가 더 적어지고 메모를 작성할 사람이 줄어들기 때문이다)"
 ---
 
 Mapping 앱을 홍보하기 전에 안드로이드 버전을 만들어야했다(아무래도 사용자들이 아이폰만 있다면 유저수가 더 적어지고 메모를 작성할 사람이 줄어들기 때문이다)

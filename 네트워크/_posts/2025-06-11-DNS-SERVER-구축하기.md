@@ -2,6 +2,7 @@
 layout: post
 image: "https://github.com/user-attachments/assets/0dbab6f9-9f35-4f14-8427-e7bb55a655af"
 tags: [DNS]
+description: "DNS(Domain Name System) 서버란?"
 ---
 
 ## DNS(Domain Name System) 서버란?
