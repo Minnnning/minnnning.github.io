@@ -1,0 +1,9 @@
+<script>
+  window.addEventListener('error', function(e) {
+    if (e.target && e.target.tagName === 'IMG' && e.target.src.indexOf('/assets/img/no-image.svg') === -1) {
+      e.target.onerror = null;
+      e.target.src = '/assets/img/no-image.svg';
+      e.target.style.opacity = '0.7';
+    }
+  }, true);
+</script>
