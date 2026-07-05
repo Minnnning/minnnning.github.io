@@ -1,5 +1,5 @@
 ---
-tags:  flutter
+tags: [flutter]
 image: "https://github.com/user-attachments/assets/3becfa92-1a22-4d4b-8c70-682c83877836"
 ---
 

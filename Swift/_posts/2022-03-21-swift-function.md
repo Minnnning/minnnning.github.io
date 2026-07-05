@@ -3,7 +3,7 @@ layout: post
 title: "Swift 함수"
 date:   2021-12-14 15:35:47 +0900
 categories:
-tags: 함수
+tags: [함수]
 excerpt: "함수와 메서드는 기본적으로 같다 상황이나 용도에 따라 다른 용어로 부른다 "
 ---
 

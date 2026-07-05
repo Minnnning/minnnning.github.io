@@ -3,7 +3,7 @@ layout: post
 title: "데이트 피커"
 date:   2022-01-22 15:35:47 +0900
 categories:
-tags: 시간데이터포멧
+tags: [시간데이터포멧]
 image: "https://user-images.githubusercontent.com/80758613/160331724-45c0f6d2-ba84-482c-963f-08341555aea1.png"
 ---
 

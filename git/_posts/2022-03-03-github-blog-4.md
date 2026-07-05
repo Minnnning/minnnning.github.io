@@ -3,7 +3,7 @@ layout: post
 title: "github 블로그 글쓰기"
 date:   2022-03-03 14:35:47 +0900
 categories:
-tags: git
+tags: [git]
 image: "https://user-images.githubusercontent.com/80758613/156505200-bc96c3ca-a114-4c6f-8782-d539820f3370.png"
 ---
 

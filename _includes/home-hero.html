@@ -1,0 +1,233 @@
+<!-- 홈 상단 히어로: _data/home_hero.yml 에서 내용 수정 -->
+{% assign hero = site.data.home_hero %}
+{% if hero %}
+  {% assign first_post = site.posts | last %}
+  {% assign first_year = first_post.date | date: '%Y' | plus: 0 %}
+  {% assign this_year = 'now' | date: '%Y' | plus: 0 %}
+  {% assign blog_years = this_year | minus: first_year | plus: 1 %}
+  {% assign career_start_s = hero.career_start | date: '%s' | plus: 0 %}
+  {% assign now_s = 'now' | date: '%s' | plus: 0 %}
+  {% assign career_years = now_s | minus: career_start_s | divided_by: 31536000 | plus: 1 %}
+
+  <div id="home-hero">
+    <p class="hero-subtitle">{{ hero.subtitle }}</p>
+
+    <div class="hero-stats">
+      {% for stat in hero.stats %}
+        <div class="hero-stat">
+          <span class="hero-stat-value">
+            {%- case stat.value -%}
+              {%- when 'auto_posts' -%}{{ site.posts | size }}
+              {%- when 'auto_categories' -%}{{ site.categories | size }}
+              {%- when 'auto_years' -%}{{ blog_years }}년차
+              {%- when 'auto_career' -%}{{ career_years }}년차
+              {%- else -%}{{ stat.value }}
+            {%- endcase -%}
+          </span>
+          <span class="hero-stat-label">{{ stat.label }}</span>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="hero-heatmap">
+      <span class="hero-featured-title"><i class="fas fa-seedling fa-fw"></i> 블로그 잔디 <span id="hero-status"></span></span>
+      <div id="hero-heatmap-grid"></div>
+      <div id="hero-extras"></div>
+      <script>
+        (function () {
+          const posts = [{% for post in site.posts %}{"d":"{{ post.date | date: '%Y-%m-%d' }}","t":{{ post.title | jsonify }},"u":"{{ post.url | relative_url }}","c":{{ post.categories | first | default: '' | jsonify }}},{% endfor %}];
+          const dates = posts.map(p => p.d);
+          const counts = {};
+          dates.forEach(d => { counts[d] = (counts[d] || 0) + 1; });
+
+          const today = new Date();
+          const start = new Date(today);
+          start.setDate(start.getDate() - 364 - today.getDay()); // 52주 전 일요일
+
+          const grid = document.getElementById('hero-heatmap-grid');
+          let week = null;
+          const cur = new Date(start);
+          while (cur <= today) {
+            if (cur.getDay() === 0) {
+              week = document.createElement('div');
+              week.className = 'hm-week';
+              grid.appendChild(week);
+            }
+            const key = cur.toISOString().slice(0, 10);
+            const n = counts[key] || 0;
+            const cell = document.createElement('div');
+            cell.className = 'hm-cell hm-l' + Math.min(n, 3);
+            if (n > 0) cell.title = key + ' · 글 ' + n + '개';
+            week.appendChild(cell);
+            cur.setDate(cur.getDate() + 1);
+          }
+
+          // 최근 포스팅 빈도로 상태 메시지 표시
+          const daysAgo = d => (today - new Date(d)) / 86400000;
+          const in30 = dates.filter(d => daysAgo(d) <= 30).length;
+          const in90 = dates.filter(d => daysAgo(d) <= 90).length;
+          let status;
+          if (in30 >= 8)      status = '요즘 불태우는 중 🔥';
+          else if (in30 >= 4) status = '꾸준히 기록하는 중 ✍️';
+          else if (in30 >= 1) status = '천천히 기록하는 중 🌱';
+          else if (in90 >= 1) status = '요즘 조금 뜸해요 ☕';
+          else                status = '요즘 바쁜가 봐요 💼 곧 돌아올게요';
+          document.getElementById('hero-status').textContent = '· ' + status;
+
+          // 요즘 주로 쓰는 주제 (최근 10개 글의 최다 카테고리)
+          const extras = document.getElementById('hero-extras');
+          const catCount = {};
+          posts.slice(0, 10).forEach(p => { if (p.c) catCount[p.c] = (catCount[p.c] || 0) + 1; });
+          const topCat = Object.entries(catCount).sort((a, b) => b[1] - a[1])[0];
+          if (topCat) {
+            const el = document.createElement('span');
+            el.className = 'hero-extra';
+            el.innerHTML = '💬 요즘 주로 쓰는 주제: <b>' + topCat[0] + '</b>';
+            extras.appendChild(el);
+          }
+
+          // 1년 전 오늘 (과거 같은 날짜에 쓴 글)
+          const mmdd = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
+          const old = posts.find(p => p.d.slice(5) === mmdd && p.d.slice(0, 4) < String(today.getFullYear()));
+          if (old) {
+            const yearsAgo = today.getFullYear() - Number(old.d.slice(0, 4));
+            const el = document.createElement('span');
+            el.className = 'hero-extra';
+            el.innerHTML = '🕰️ ' + yearsAgo + '년 전 오늘: <a href="' + old.u + '">' + old.t + '</a>';
+            extras.appendChild(el);
+          }
+        })();
+      </script>
+    </div>
+
+    {% if hero.featured.size > 0 %}
+      <div class="hero-featured">
+        <span class="hero-featured-title"><i class="fas fa-thumbtack fa-fw"></i> 대표 글</span>
+        <div class="hero-featured-cards">
+          {% for url in hero.featured %}
+            {% assign fp = site.posts | where: 'url', url | first %}
+            {% if fp %}
+              <a class="hero-featured-card" href="{{ fp.url | relative_url }}">
+                <span class="hero-featured-card-title">{{ fp.title }}</span>
+                <span class="hero-featured-card-date">{{ fp.date | date: '%Y.%m' }}</span>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <style>
+    #home-hero {
+      padding: 1.75rem 1.5rem 1.5rem;
+      margin-bottom: 1.25rem;
+      border-radius: 0.75rem;
+      background: var(--card-bg);
+      box-shadow: var(--card-shadow, 0 0 0 1px rgba(128, 128, 128, 0.15));
+    }
+    #home-hero .hero-subtitle {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--heading-color);
+      margin-bottom: 1.25rem;
+    }
+    #home-hero .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    #home-hero .hero-stat {
+      display: flex;
+      flex-direction: column;
+    }
+    #home-hero .hero-stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--heading-color);
+      line-height: 1.2;
+    }
+    #home-hero .hero-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-muted-color);
+    }
+    #home-hero .hero-heatmap {
+      margin-bottom: 1.25rem;
+    }
+    #hero-status {
+      font-weight: 400;
+      color: var(--text-muted-color);
+    }
+    #hero-extras {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 1.5rem;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-muted-color);
+    }
+    #hero-extras b {
+      color: var(--heading-color);
+    }
+    #hero-extras a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+    #hero-heatmap-grid {
+      display: flex;
+      gap: 3px;
+      overflow-x: auto;
+      padding-bottom: 0.25rem;
+    }
+    #hero-heatmap-grid .hm-week {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    #hero-heatmap-grid .hm-cell {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    #hero-heatmap-grid .hm-l0 { background: rgba(128, 128, 128, 0.15); }
+    #hero-heatmap-grid .hm-l1 { background: #9be9a8; }
+    #hero-heatmap-grid .hm-l2 { background: #40c463; }
+    #hero-heatmap-grid .hm-l3 { background: #216e39; }
+    #home-hero .hero-featured-title {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted-color);
+      margin-bottom: 0.5rem;
+    }
+    #home-hero .hero-featured-cards {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    #home-hero .hero-featured-card {
+      flex: 1 1 200px;
+      display: flex;
+      flex-direction: column;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--main-border-color, rgba(128, 128, 128, 0.25));
+      border-radius: 0.5rem;
+      text-decoration: none;
+    }
+    #home-hero .hero-featured-card:hover {
+      border-color: var(--link-color);
+    }
+    #home-hero .hero-featured-card-title {
+      font-weight: 600;
+      color: var(--heading-color);
+      font-size: 0.95rem;
+    }
+    #home-hero .hero-featured-card-date {
+      font-size: 0.8rem;
+      color: var(--text-muted-color);
+      margin-top: 0.25rem;
+    }
+  </style>
+{% endif %}

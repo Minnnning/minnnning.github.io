@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SwiftUI Link와 네비게이션"
-tags:  swiftui List NavigationStack NavigationLink
+tags: [SwiftUI, List, NavigationStack, NavigationLink]
 image: "https://github.com/user-attachments/assets/7bb92be8-083b-40dc-9504-26eaa027b671"
 ---
 

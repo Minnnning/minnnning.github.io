@@ -1,0 +1,24 @@
+# 홈 상단 히어로 섹션 설정
+# stats의 value에 auto_posts / auto_categories / auto_years 를 쓰면 자동 계산됨
+subtitle: 클라우드와 네트워크를 기록합니다
+
+# 클라우드 회사 입사일 (N년차 자동 계산)
+career_start: "2025-10-13"
+
+stats:
+  - label: 클라우드 엔지니어
+    value: auto_career
+  - label: 작성한 글
+    value: auto_posts
+  - label: 카테고리
+    value: auto_categories
+  - label: 블로그 운영
+    value: auto_years
+  # 자격증 생기면 주석 풀고 숫자 입력
+  # - label: 자격증
+  #   value: "1"
+
+# 대표 글 (포스트 URL, 2~3개 권장)
+featured:
+  - /posts/DNS-호스팅과-속도/
+  - /posts/그림으로-이해하는-AWS-구조와-기술/

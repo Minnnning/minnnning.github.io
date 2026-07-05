@@ -3,7 +3,7 @@ layout: post
 title: "React-Router"
 date: 2023-01-25 13:35:47 +0900
 categories:
-tags: link router
+tags: [link, router]
 excerpt_image: "https://user-images.githubusercontent.com/80758613/214004018-ddc799b9-8e25-4f38-b272-b08527d651d5.png"
 ---
 

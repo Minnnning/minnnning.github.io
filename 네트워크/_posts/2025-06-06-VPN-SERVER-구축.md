@@ -1,7 +1,7 @@
 ---
 layout: post
 image: "https://github.com/user-attachments/assets/16611905-7d78-4891-973a-6c836e15722f"
-tags: VPN
+tags: [VPN]
 ---
 
 ##  VPN 구축기

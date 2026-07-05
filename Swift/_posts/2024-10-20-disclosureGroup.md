@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SwiftUI 실습 5 "
-tags:  swiftui OutlineGroup DisclosureGroup
+tags: [SwiftUI, OutlineGroup, DisclosureGroup]
 image: "https://github.com/user-attachments/assets/a6079de1-fd59-4ccb-b8e9-1de6e7a94969"
 ---
 

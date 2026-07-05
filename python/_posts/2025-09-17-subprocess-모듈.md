@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 파이썬 subprocess 모듈과 threading 모듈
-tags: subprocess threading
+tags: [subprocess, threading]
 ---
 
 클라우드 프로젝트 중 나는 클라이언트(블랙박스) + 영상 업로드 서버를 맡아서 개발을 진행중이었다

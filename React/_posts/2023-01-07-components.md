@@ -3,7 +3,7 @@ layout: post
 title: "component and props"
 date:   2023-01-07 10:35:47 +0900
 categories:
-tags: component props
+tags: [component, props]
 image: "https://user-images.githubusercontent.com/80758613/211134978-220e2283-2c78-403b-a842-06bf21c44bc2.png"
 ---
 

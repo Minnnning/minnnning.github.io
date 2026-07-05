@@ -3,7 +3,7 @@ layout: post
 title: "github 블로그 만들기(2)"
 date:   2022-02-28 16:06:47 +0900
 categories:
-tags: git
+tags: [git]
 image: "https://user-images.githubusercontent.com/80758613/155945048-32de8b49-76c7-4f25-8093-d69cf66d8511.png"
 ---
 

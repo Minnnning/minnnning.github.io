@@ -3,7 +3,7 @@ layout: post
 title: "async & await"
 date:   2023-01-05 03:35:47 +0900
 categories:
-tags: async await
+tags: [async, await]
 image: "https://user-images.githubusercontent.com/80758613/210627234-fdd958bf-5f94-4a12-baa9-c326a7705581.png"
 ---
 

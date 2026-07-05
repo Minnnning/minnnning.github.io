@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SwiftUI의 View"
-tags: view swiftui
+tags: [view, SwiftUI]
 image: "https://github.com/user-attachments/assets/99a264ce-633d-4155-9641-927ffe9d7792"
 ---
 

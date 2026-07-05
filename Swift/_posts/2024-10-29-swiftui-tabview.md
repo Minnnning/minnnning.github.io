@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SwiftUI에서 TabView 사용하기 "
-tags:  swiftui TabView
+tags: [SwiftUI, TabView]
 image: "https://github.com/user-attachments/assets/de4e4ae8-e239-4849-a211-7a69fdeb8a15"
 ---
 

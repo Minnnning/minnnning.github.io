@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Swift에서 Alamofire를 이용한 RESTAPI "
-tags:  Alamofire 
+tags: [Alamofire]
 image: "https://github.com/user-attachments/assets/8bc3e5fc-d28e-4847-b29b-144e40e78a5e"
 ---
 

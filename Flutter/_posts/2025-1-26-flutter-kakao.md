@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "플러터에서 카카오 로그인 구현"
-tags:  flutter kakaologin
+tags: [flutter, kakaologin]
 image: "https://github.com/user-attachments/assets/14025bcc-6446-4f54-aad1-19b1b425bc28"
 ---
 
