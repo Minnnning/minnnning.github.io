@@ -35,7 +35,7 @@
       <div id="hero-extras"></div>
       <script>
         (function () {
-          const posts = [{% for post in site.posts %}{"d":"{{ post.date | date: '%Y-%m-%d' }}","t":{{ post.title | jsonify }},"u":"{{ post.url | relative_url }}","c":{{ post.categories | first | default: '' | jsonify }}},{% endfor %}];
+          const posts = [{% for post in site.posts %}{"d":"{{ post.date | date: '%Y-%m-%d' }}","t":{{ post.title | jsonify }},"u":"{{ post.url | relative_url }}","c":{{ post.categories | first | default: '' | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}];
           const dates = posts.map(p => p.d);
           const counts = {};
           dates.forEach(d => { counts[d] = (counts[d] || 0) + 1; });
@@ -44,16 +44,20 @@
           const start = new Date(today);
           start.setDate(start.getDate() - 364 - today.getDay()); // 52주 전 일요일
 
+          const toKey = d => d.getFullYear() + '-' +
+            String(d.getMonth()+1).padStart(2,'0') + '-' +
+            String(d.getDate()).padStart(2,'0');
+
           const grid = document.getElementById('hero-heatmap-grid');
           let week = null;
           const cur = new Date(start);
           while (cur <= today) {
-            if (cur.getDay() === 0) {
+            if (cur.getDay() === 0 || week === null) {
               week = document.createElement('div');
               week.className = 'hm-week';
               grid.appendChild(week);
             }
-            const key = cur.toISOString().slice(0, 10);
+            const key = toKey(cur);
             const n = counts[key] || 0;
             const cell = document.createElement('div');
             cell.className = 'hm-cell hm-l' + Math.min(n, 3);
@@ -63,7 +67,13 @@
           }
 
           // 최근 포스팅 빈도로 상태 메시지 표시
-          const daysAgo = d => (today - new Date(d)) / 86400000;
+          const todayKey = toKey(today);
+          const daysAgo = d => {
+            const [y,m,day] = d.split('-').map(Number);
+            const a = new Date(y, m-1, day);
+            const b = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+            return (b - a) / 86400000;
+          };
           const in30 = dates.filter(d => daysAgo(d) <= 30).length;
           const in90 = dates.filter(d => daysAgo(d) <= 90).length;
           let status;
@@ -191,7 +201,7 @@
       border-radius: 2px;
       flex-shrink: 0;
     }
-    #hero-heatmap-grid .hm-l0 { background: rgba(128, 128, 128, 0.15); }
+    #hero-heatmap-grid .hm-l0 { background: rgba(128, 128, 128, 0.25); }
     #hero-heatmap-grid .hm-l1 { background: #9be9a8; }
     #hero-heatmap-grid .hm-l2 { background: #40c463; }
     #hero-heatmap-grid .hm-l3 { background: #216e39; }
