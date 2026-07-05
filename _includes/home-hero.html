@@ -42,7 +42,7 @@
 
           const today = new Date();
           const start = new Date(today);
-          start.setDate(start.getDate() - 364 - today.getDay()); // 52주 전 일요일
+          start.setDate(start.getDate() - 364 - today.getDay()); /* 52주 전 일요일 */
 
           const toKey = d => d.getFullYear() + '-' +
             String(d.getMonth()+1).padStart(2,'0') + '-' +
@@ -66,7 +66,7 @@
             cur.setDate(cur.getDate() + 1);
           }
 
-          // 최근 포스팅 빈도로 상태 메시지 표시
+          /* 최근 포스팅 빈도로 상태 메시지 표시 */
           const todayKey = toKey(today);
           const daysAgo = d => {
             const [y,m,day] = d.split('-').map(Number);
@@ -84,7 +84,7 @@
           else                status = '요즘 바쁜가 봐요 💼 곧 돌아올게요';
           document.getElementById('hero-status').textContent = '· ' + status;
 
-          // 요즘 주로 쓰는 주제 (최근 10개 글의 최다 카테고리)
+          /* 요즘 주로 쓰는 주제 */
           const extras = document.getElementById('hero-extras');
           const catCount = {};
           posts.slice(0, 10).forEach(p => { if (p.c) catCount[p.c] = (catCount[p.c] || 0) + 1; });
@@ -96,7 +96,7 @@
             extras.appendChild(el);
           }
 
-          // 1년 전 오늘 (과거 같은 날짜에 쓴 글)
+          /* 1년 전 오늘 */
           const mmdd = String(today.getMonth() + 1).padStart(2, '0') + '-' + String(today.getDate()).padStart(2, '0');
           const old = posts.find(p => p.d.slice(5) === mmdd && p.d.slice(0, 4) < String(today.getFullYear()));
           if (old) {
