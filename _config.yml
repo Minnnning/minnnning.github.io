@@ -19,7 +19,7 @@ title: Minnnning's logs # the main title
 tagline: 정신을 차려보니 클라우드 엔지니어가 돼버렸다? # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  클라우드 엔지니어 minnnning의 기술 블로그. 네트워크, 클라우드(AWS/GCP), 리눅스, 개발(Python, Java, Swift, React) 학습 기록과 실무 경험을 공유합니다.
+  클라우드 엔지니어 minnnning의 기술 블로그. 네트워크, 클라우드, AI, 개발 학습 기록과 일상을 공유합니다.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
