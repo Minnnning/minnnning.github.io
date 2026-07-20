@@ -5,7 +5,7 @@ date: 2026-07-08 00:00:00 +0900
 categories: [MSP일지]
 tags: [codedeploy, ec2, ami]
 description: "같은 AMI인데 prod는 되고 staging만 CodeDeploy 배포가 실패한 사건을 분석하며 배운 것."
-Image: "https://image.minnnning.kr/images/2026/07/20260708-002654-5adb78.webp"
+image: "https://image.minnnning.kr/images/2026/07/20260708-002654-5adb78.webp"
 ---
 
 이번 건은 제가 직접 삽질한 건 아니고, 같이 일하는 인턴분이 겪은 CodeDeploy 배포 실패를 옆에서 같이 들여다보다가 알게 된 내용입니다. 뭐 코드 디플로이 롤링이라 삭제는 안되고 스테이지 서버라 서비스에 문제는 없어서 다행이었습니다.
