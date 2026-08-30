@@ -1,6 +1,6 @@
 # 홈 상단 히어로 섹션 설정
 # stats의 value에 auto_posts / auto_categories / auto_years 를 쓰면 자동 계산됨
-subtitle: AWS 클라우드 정복중 ☁️  언젠간 GCP, Azure까지도...
+subtitle: 클라우드 보안으로 가자~~~
 
 # 클라우드 회사 입사일 (N년차 자동 계산)
 career_start: "2025-10-13"
