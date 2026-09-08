@@ -5,7 +5,7 @@ date: 2026-09-08 00:00:00 +0900
 categories: [AWS]
 tags: [guardduty, route53, dns-firewall, security]
 description: "GuardDuty 피싱 도메인 탐지 알럿. IP 차단이 왜 무력했고, Route 53 DNS Firewall로 설정하게된 이유."
-Image: "https://image.minnnning.kr/images/2026/09/20260908-232235-85d752.webp"
+image: "https://image.minnnning.kr/images/2026/09/20260908-232235-85d752.webp"
 ---
 
 갑자기 슬랙에 GuardDuty 알럿이 하나 떴다. 고객사 VPC 안에서 피싱/도박 계열 도메인으로 DNS 질의가 나가고 있다는 내용이었다. finding type은 `Trojan:EC2/PhishingDomainRequest!DNS`, 기본 심각도 High.
@@ -24,7 +24,7 @@ Image: "https://image.minnnning.kr/images/2026/09/20260908-232235-85d752.webp"
 
 근데 안됨... 왜지?
 
-![images-3](https://image.minnnning.kr/images/2026/09/20260908-232623-b7364c.webp){: style="max-width: 30%" }
+![images-3](https://image.minnnning.kr/images/2026/09/20260908-232623-b7364c.webp){: style="display: block; margin: 0 auto; max-width: 40%;"}
 
 호스트에서 안 되니 한 계층 올려서 **Network ACL로도 막아봤다.** 서브넷 전체에 걸리는 거라 조심스러웠는데, 어차피 안 되는 거 확인은 해야 했다.
 
@@ -53,7 +53,8 @@ Image: "https://image.minnnning.kr/images/2026/09/20260908-232235-85d752.webp"
 그리고 이게 곧바로 답이 되기도 했다. **VPC를 지나는 게 DNS 질의뿐이라면, 우리가 차단 할 수 있는 지점도 거기뿐이다.** 질의 단계에서 막으면 단말은 IP를 못 받고, IP가 없으면 직결 통신 자체를 못한다.
 
 결론적으로 답은 하나였다.
-![images-4](https://image.minnnning.kr/images/2026/09/20260908-234514-fc7956.webp)
+
+![images-4](https://image.minnnning.kr/images/2026/09/20260909-002742-ad2318.webp){: style="display: block; margin: 0 auto; max-width: 70%;"}
 
  차단 지점을 IP가 아니라 **DNS 질의 단계**로 옮기는 것.
 
