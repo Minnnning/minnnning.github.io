@@ -1,0 +1,104 @@
+<svg viewBox="0 0 900 580" role="img"
+     aria-label="Full Tunnel과 Split Tunnel 비교. Full Tunnel에서는 DNS 질의와 실제 HTTPS 통신이 모두 VPC를 지나므로 SG와 NACL이 통신을 보고 차단할 수 있다. Split Tunnel에서는 DNS 질의만 VPC를 지나 GuardDuty 알럿이 발생하지만, 실제 통신은 단말에서 인터넷으로 직결되어 VPC를 지나지 않으므로 SG와 NACL이 막을 트래픽 자체가 없다."
+     xmlns="http://www.w3.org/2000/svg"
+     style="max-width:100%;height:auto"
+     font-family="system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+    </marker>
+    <marker id="arA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e35d5b"/>
+    </marker>
+  </defs>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.18">
+    <rect x="8" y="8" width="884" height="276" rx="10"/>
+    <rect x="8" y="296" width="884" height="276" rx="10"/>
+  </g>
+
+  <!-- ================= A : Full Tunnel ================= -->
+  <text x="28" y="40" font-size="15.5" font-weight="700" fill="currentColor">Full Tunnel</text>
+  <text x="128" y="40" font-size="12.5" fill="currentColor" opacity="0.65">— DNS 질의도 실제 통신도 VPC를 지난다</text>
+
+  <rect x="190" y="76" width="266" height="170" rx="8" fill="none"
+        stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.5"/>
+  <text x="190" y="68" font-size="11" fill="currentColor" opacity="0.7">VPC — SG · NACL이 볼 수 있는 범위</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.6">
+    <rect x="26" y="130" width="86" height="54" rx="6"/>
+    <rect x="206" y="92" width="104" height="44" rx="6"/>
+    <rect x="330" y="92" width="112" height="44" rx="6"/>
+  </g>
+
+  <g fill="currentColor" text-anchor="middle">
+    <text x="69" y="153" font-size="12.5">직원 단말</text>
+    <text x="69" y="169" font-size="10.5" opacity="0.6">VPN 접속</text>
+    <text x="258" y="118" font-size="12">VPN 게이트웨이</text>
+    <text x="386" y="110" font-size="12">Route 53</text>
+    <text x="386" y="125" font-size="12">Resolver</text>
+  </g>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M112,157 H144"/>
+    <path d="M144,157 V114 H202" marker-end="url(#ar)"/>
+    <path d="M310,114 H326" marker-end="url(#ar)"/>
+    <path d="M442,114 H482" marker-end="url(#ar)"/>
+    <path d="M144,157 V212 H354"/>
+  </g>
+  <path d="M378,212 H482" fill="none" stroke="currentColor" stroke-width="1.6"
+        stroke-dasharray="5 4" opacity="0.3" marker-end="url(#ar)"/>
+
+  <g stroke="#e35d5b" stroke-width="2.6" stroke-linecap="round">
+    <line x1="359" y1="205" x2="373" y2="219"/>
+    <line x1="373" y1="205" x2="359" y2="219"/>
+  </g>
+
+  <g fill="currentColor">
+    <text x="173" y="105" font-size="11" text-anchor="middle" opacity="0.75">DNS 질의</text>
+    <text x="245" y="203" font-size="11" text-anchor="middle" opacity="0.75">실제 통신 (HTTPS)</text>
+    <text x="488" y="118" font-size="12">GuardDuty 탐지</text>
+    <text x="488" y="216" font-size="12" opacity="0.45">악성 서버</text>
+    <text x="366" y="238" font-size="11" text-anchor="middle" font-weight="600">여기서 차단 적중</text>
+  </g>
+
+  <!-- ================= B : Split Tunnel ================= -->
+  <text x="28" y="328" font-size="15.5" font-weight="700" fill="currentColor">Split Tunnel</text>
+  <text x="132" y="328" font-size="12.5" fill="currentColor" opacity="0.65">— DNS 질의<tspan font-weight="700">만</tspan> VPC를 지난다</text>
+
+  <rect x="190" y="364" width="266" height="170" rx="8" fill="none"
+        stroke="currentColor" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.5"/>
+  <text x="190" y="356" font-size="11" fill="currentColor" opacity="0.7">VPC — SG · NACL이 볼 수 있는 범위</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.6">
+    <rect x="26" y="418" width="86" height="54" rx="6"/>
+    <rect x="206" y="380" width="104" height="44" rx="6"/>
+    <rect x="330" y="380" width="112" height="44" rx="6"/>
+  </g>
+
+  <g fill="currentColor" text-anchor="middle">
+    <text x="69" y="441" font-size="12.5">직원 단말</text>
+    <text x="69" y="457" font-size="10.5" opacity="0.6">VPN 접속</text>
+    <text x="258" y="406" font-size="12">VPN 게이트웨이</text>
+    <text x="386" y="398" font-size="12">Route 53</text>
+    <text x="386" y="413" font-size="12">Resolver</text>
+  </g>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.8">
+    <path d="M112,445 H144"/>
+    <path d="M144,445 V402 H202" marker-end="url(#ar)"/>
+    <path d="M310,402 H326" marker-end="url(#ar)"/>
+    <path d="M442,402 H482" marker-end="url(#ar)"/>
+  </g>
+
+  <path d="M69,472 V554 H482" fill="none" stroke="#e35d5b" stroke-width="2.6" marker-end="url(#arA)"/>
+
+  <g fill="currentColor">
+    <text x="173" y="393" font-size="11" text-anchor="middle" opacity="0.75">DNS 질의</text>
+    <text x="488" y="406" font-size="12">GuardDuty 탐지 — <tspan font-weight="700">알럿은 뜬다</tspan></text>
+    <text x="316" y="500" font-size="12" text-anchor="middle" font-weight="700">막을 트래픽이 여기엔 없다</text>
+    <text x="316" y="518" font-size="10.5" text-anchor="middle" opacity="0.7">SG · NACL · iptables 전부 무력</text>
+    <text x="270" y="545" font-size="11" text-anchor="middle">실제 통신 (HTTPS) — VPC를 지나지 않는다</text>
+    <text x="488" y="558" font-size="12" font-weight="700">악성 서버 — 그대로 도달</text>
+  </g>
+</svg>

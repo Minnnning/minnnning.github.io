@@ -2,7 +2,7 @@
 layout: post
 title: "같은 AMI인데 왜 staging만 CodeDeploy 배포가 실패했을까?"
 date: 2026-07-08 00:00:00 +0900
-categories: [MSP일지]
+categories: [AWS]
 tags: [codedeploy, ec2, ami]
 description: "같은 AMI인데 prod는 되고 staging만 CodeDeploy 배포가 실패한 사건을 분석하며 배운 것."
 image: "https://image.minnnning.kr/images/2026/07/20260708-002654-5adb78.webp"
